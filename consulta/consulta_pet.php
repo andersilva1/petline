@@ -16,10 +16,19 @@ $quantidade_pg = 10;
 $num_pagina = ceil($contadorConsultaPets/$quantidade_pg);
 $incio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
-if ($id == 1) {
-    $sqlConsultaPet = "SELECT P.id, P.nome, P.raca, P.peso, P.cor, P.dt_nascimento, P.descricao, CONCAT(U.nome, ' ', U.sobrenome) as dono, P.ativo FROM pet P INNER JOIN usuario U ON P.id_usuario = U.id LIMIT $incio, $quantidade_pg";
+if (isset($_GET['busca'])) {
+    $busca = $_GET['busca'];
+    if ($id == 1) {
+        $sqlConsultaPet = "SELECT P.id, P.nome, P.raca, P.peso, P.cor, P.dt_nascimento, P.descricao, CONCAT(U.nome, ' ', U.sobrenome) as dono, P.ativo FROM pet P INNER JOIN usuario U ON P.id_usuario = U.id WHERE P.nome LIKE '%$busca%' LIMIT $incio, $quantidade_pg";
+    }else{
+        $sqlConsultaPet = "SELECT P.id, P.nome, P.raca, P.peso, P.cor, P.dt_nascimento, P.descricao, CONCAT(U.nome, ' ', U.sobrenome) as dono, P.ativo FROM pet P INNER JOIN usuario U ON P.id_usuario = U.id WHERE P.id_usuario = $id and P.nome LIKE '%$busca%' LIMIT $incio, $quantidade_pg";
+    }
 }else{
-    $sqlConsultaPet = "SELECT P.id, P.nome, P.raca, P.peso, P.cor, P.dt_nascimento, P.descricao, CONCAT(U.nome, ' ', U.sobrenome) as dono, P.ativo FROM pet P INNER JOIN usuario U ON P.id_usuario = U.id WHERE P.id_usuario = $id LIMIT $incio, $quantidade_pg";
+    if ($id == 1) {
+        $sqlConsultaPet = "SELECT P.id, P.nome, P.raca, P.peso, P.cor, P.dt_nascimento, P.descricao, CONCAT(U.nome, ' ', U.sobrenome) as dono, P.ativo FROM pet P INNER JOIN usuario U ON P.id_usuario = U.id LIMIT $incio, $quantidade_pg";
+    }else{
+        $sqlConsultaPet = "SELECT P.id, P.nome, P.raca, P.peso, P.cor, P.dt_nascimento, P.descricao, CONCAT(U.nome, ' ', U.sobrenome) as dono, P.ativo FROM pet P INNER JOIN usuario U ON P.id_usuario = U.id WHERE P.id_usuario = $id LIMIT $incio, $quantidade_pg";
+    }
 }
 $resultadoConsultaPet = mysqli_query($conn,$sqlConsultaPet);
 $contadorConsultaPet = mysqli_num_rows($resultadoConsultaPet);
@@ -28,16 +37,24 @@ $contadorConsultaPet = mysqli_num_rows($resultadoConsultaPet);
     <h3>Consulta Pet</h3>
     <h4>Pesquise por uma palavra chave ou selecione o PET da lista</h4>
     <br>
+    <form action="consulta_pet.php" method="get">
     <div style="margin: auto; max-width: 300px;" align="right">
         <table>
             <tr>
-                <td><input type="text" class="form-control" id="busca" name="busca"></td>
-                <td><button type="button" class="btn btn-primary" id="busca">
+                <td><input type="text" class="form-control" id="busca" name="busca" placeholder="Pesquise pelo nome do PET"></td>
+                <td><button type="submit" class="btn btn-primary" id="busca">
                     <span class="glyphicon glyphicon-search"> </span>
                 </button></td>
             <tr>
         </table>
     </div>
+    </form>
+    <?php
+    if (isset($_GET['busca'])) {
+        $busca = $_GET['busca'];
+        echo "<h5 style= 'text-align: center;'>Exibindo $contadorConsultaPet resultado(s) para '$busca'. <a href='consulta_pet.php'> <b>Clique aqui</b> </a> para listar todos</h5>";
+    }
+    ?>
     <div style="margin: auto; max-width: 800px;" class="table-responsive panel panel-default">
     <table width=100% class="table table-striped">
     <thead>
@@ -78,7 +95,7 @@ $contadorConsultaPet = mysqli_num_rows($resultadoConsultaPet);
         ?>
     </table>
     <div align="center">
-        <h4>Para adicionar um novo PET <a href="http://www.petline.com.br/cadastro_pet.php">Clique Aqui</a></h4>
+        <h4>Para adicionar um novo PET <a href="http://www.petline.com.br/cadastro_pet.php"><b>Clique Aqui</b></a></h4>
     </div>
     </div>
     <?php

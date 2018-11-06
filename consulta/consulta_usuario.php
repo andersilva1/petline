@@ -12,7 +12,12 @@ $num_pagina = ceil($contadorConsultaUsuarios/$quantidade_pg);
 
 $incio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
-$sqlConsultaUsuario = "SELECT id, CONCAT(nome, ' ', sobrenome) AS nome, login, ativo, perfil FROM usuario LIMIT $incio, $quantidade_pg";
+if (isset($_GET['busca'])) {
+    $busca = $_GET['busca'];
+    $sqlConsultaUsuario = "SELECT id, CONCAT(nome, ' ', sobrenome) AS nome, login, ativo, perfil FROM usuario WHERE CONCAT(nome, ' ', sobrenome) LIKE '%$busca%' LIMIT $incio, $quantidade_pg";
+}else{
+    $sqlConsultaUsuario = "SELECT id, CONCAT(nome, ' ', sobrenome) AS nome, login, ativo, perfil FROM usuario LIMIT $incio, $quantidade_pg";
+}
 $resultadoConsultaUsuario = mysqli_query($conn,$sqlConsultaUsuario);
 $contadorConsultaUsuario = mysqli_num_rows($resultadoConsultaUsuario);
 ?>
@@ -21,16 +26,25 @@ $contadorConsultaUsuario = mysqli_num_rows($resultadoConsultaUsuario);
     <h4>Pesquise por uma palavra chave ou selecione o usuario na lista</h4>
     <br>
 
+    <form action="consulta_usuario.php" method="get">
     <div style="margin: auto; max-width: 300px;" align="right">
         <table>
             <tr>
-                <td><input type="text" class="form-control" id="busca" name="busca"></td>
-                <td><button type="button" class="btn btn-primary" id="busca">
+                <td><input type="text" class="form-control" id="busca" name="busca" placeholder="Pesquise pelo nome"></td>
+                <td><button type="submit" class="btn btn-primary" id="busca">
                     <span class="glyphicon glyphicon-search"> </span>
                 </button></td>
             <tr>
         </table>
     </div>
+    </form>
+
+    <?php
+    if (isset($_GET['busca'])) {
+        $busca = $_GET['busca'];
+        echo "<h5 style= 'text-align: center;'>Exibindo $contadorConsultaUsuario resultado(s) para '$busca'. <a href='consulta_usuario.php'> <b>Clique aqui</b> </a> para listar todos</h5>";
+    }
+    ?>
 
     <div style="margin: auto; max-width: 800px;" class="table-responsive panel panel-default">
         <table width=100% class="table table-striped">
