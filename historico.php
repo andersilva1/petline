@@ -30,7 +30,11 @@ if ($perfil == 'pas') {
     $num_pagina = ceil($contadorIndexPasseadores/$quantidade_pg);
     $incio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
-    $sqlIndexPasseador = "SELECT DISTINCT
+    if (isset($_GET['busca'])) {
+        $data_inicio = $_POST['data_inicio'];
+        $data_fim = $_POST['data_fim'];
+    }
+    $sqlIndexPasseadorSelect = "SELECT DISTINCT
     CONCAT(U1.nome,' ',U1.sobrenome) as cliente_passeio,
     P.dt_passeio,
     P.hora_inicio,
@@ -46,8 +50,17 @@ if ($perfil == 'pas') {
     WHERE
     U.id = $id
     AND PE.ativo = 1
-    AND P.ativo = 0
-    LIMIT $incio, $quantidade_pg";
+    AND P.ativo = 0 ";
+
+    if (isset($_GET['busca'])) {
+        $sqlIndexPasseadorWhere = "AND dt_passeio BETWEEN '$data_inicio' AND '$data_fim' ";
+    }else{
+        $sqlIndexPasseadorWhere = "";
+    }
+
+    $sqlIndexPaginacao= "LIMIT $incio, $quantidade_pg";
+    
+    $sqlIndexPasseador = $sqlIndexPasseadorSelect . $sqlIndexPasseadorWhere . $sqlIndexPaginacao;
     $resultadoSqlIndexPasseador = mysqli_query($conn,$sqlIndexPasseador);
     $contadorIndexPasseador = mysqli_num_rows($resultadoSqlIndexPasseador);
 ?>
@@ -56,6 +69,29 @@ if ($perfil == 'pas') {
         <div class="page-header">
             <h2>Passeios Já Finalizados</h2>
         </div>
+        <form action="historico.php?busca" method="post">
+        <div style="margin: auto; max-width: 300px;" align="right">
+            <table>
+                <tr>
+                    <td style="text-align: center;" colspan=5>Busca por Data</td>
+                </tr>
+                <tr>
+                <td>De:</td>
+                <td><input type="date" class="form-control" id="data_inicio" name="data_inicio"></td>
+                <td>Até:</td>
+                <td><input type="date" class="form-control" id="data_fim" name="data_fim"></td>
+                <td><button type="submit" class="btn btn-primary" id="busca"><span class="glyphicon glyphicon-search"></span></button></td>
+                </tr>
+            </table>
+        </div>
+        </form>
+
+        <?php
+        if (isset($_GET['busca'])) {
+            
+            echo "<h5 style= 'text-align: center;'>Exibindo $contadorIndexPasseador resultado(s) entre '$data_inicio' e '$data_fim'. <a href='historico.php'> <b>Clique aqui</b> </a> para listar todos</h5>";
+        }
+        ?>
         <div class="panel panel-default">
         
             <table class="table table-striped">

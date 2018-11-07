@@ -13,7 +13,8 @@ if ($perfil == 'pas') {
 	P.hora_fim,
     PE.nome as nome_pet,
     P.ativo as passeio_realizado,
-    P.id as id_pacote
+    P.id as id_pacote,
+    P.pet_pego
     FROM servico S
     INNER JOIN usuario U ON (S.id_passeador = U.id AND U.perfil = 'pas')
     INNER JOIN usuario U1 ON (S.id_cliente = U1.id AND U1.perfil = 'cli')
@@ -37,7 +38,8 @@ if ($perfil == 'pas') {
 	P.hora_fim,
     PE.nome as nome_pet,
     P.ativo as passeio_realizado,
-    P.id as id_pacote
+    P.id as id_pacote,
+    P.pet_pego
     FROM servico S
     INNER JOIN usuario U ON (S.id_passeador = U.id AND U.perfil = 'pas')
     INNER JOIN usuario U1 ON (S.id_cliente = U1.id AND U1.perfil = 'cli')
@@ -66,6 +68,7 @@ if ($perfil == 'pas') {
                     <th scope="col">Inicio</th>
                     <th scope="col">Termino</th>
                     <th scope="col">Nome Pet</th>
+                    <th scope="col">Passeio Iniciado?</th>
                     <th scope="col">Passeio Realizado?</th>
                     </tr>
                 </thead>
@@ -79,14 +82,21 @@ if ($perfil == 'pas') {
                         $hora_inicio = $linhaIndexPasseador['hora_inicio'];
                         $hora_fim = $linhaIndexPasseador['hora_fim'];
                         $nome_pet = $linhaIndexPasseador['nome_pet'];
+                        $pet_pego = $linhaIndexPasseador['pet_pego'];
 
                         echo "<tr>
                             <td width=20%>$cliente_passeio</td>
                             <td width=10%>$dt_passeio</td>
                             <td width=10%>$hora_inicio</td>
                             <td width=10%>$hora_fim</td>
-                            <td width=10%>$nome_pet</td>";?>
-                            <td width=10% align=center><a href="#" onclick="if(confirm('Tem certeza que deseja finalizar esse passeio?')) <?php echo "window.location.href = 'http://www.petline.com.br/finaliza_passeio.php?id=$id_pacote';" ?> ; return false" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></a></td>
+                            <td width=10%>$nome_pet</td>";
+                            if ($pet_pego == 1) {
+                                echo "<td></td>";
+                            }else{
+                                ?>
+                            <td style="width:10%; align:center;"><a href="#" onclick="if(confirm('Tem certeza que deseja iniciar esse passeio?')) <?php echo "window.location.href = 'http://www.petline.com.br/inicia_passeio.php?id=$id_pacote';" ?> ; return false" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></a></td>
+                            <?php } ?>
+                            <td style="width:10%; align:center;"><a href="#" onclick="if(confirm('Tem certeza que deseja finalizar esse passeio?')) <?php echo "window.location.href = 'http://www.petline.com.br/finaliza_passeio.php?id=$id_pacote';" ?> ; return false" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></a></td>
                             <?php echo "</tr>";
                     }
                 }else{
@@ -130,10 +140,6 @@ if ($perfil == 'pas') {
                 </li>
             </ul>
         </nav>
-    </div>
-
-    <div class="col-md-6" align="left">
-        <a href="http://www.petline.com.br/finaliza_servico.php" class="btn btn-success">Finalizar Serviço</a>
     </div>
 </div>
 <?php }else if ($perfil == 'cli'){
