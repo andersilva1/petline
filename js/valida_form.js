@@ -239,4 +239,19 @@ $ (document).ready(function(){
             return false;
         }
     })
+
+    $("#busca").click(function(){
+
+        var cont = 0;
+        if ($("#data_inicio").val() == "" || $("#data_fim").val() == "") {
+    
+            alert("É necessario inserir data inicio e fim para concluir a busca");
+            cont++;
+            return false;
+        }
+        
+        if (cont == 0) {
+           $("#busca").submit();
+        }
+    })
 });

@@ -30,7 +30,11 @@ if ($perfil == 'pas') {
     $num_pagina = ceil($contadorIndexPasseadores/$quantidade_pg);
     $incio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
-    $sqlIndexPasseador = "SELECT DISTINCT
+    if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+        $data_inicio = $_GET['data_inicio'];
+        $data_fim = $_GET['data_fim'];
+    }
+    $sqlIndexPasseadorSelect = "SELECT DISTINCT
     CONCAT(U1.nome,' ',U1.sobrenome) as cliente_passeio,
     P.dt_passeio,
     P.hora_inicio,
@@ -46,16 +50,49 @@ if ($perfil == 'pas') {
     WHERE
     U.id = $id
     AND PE.ativo = 1
-    AND P.ativo = 0
-    LIMIT $incio, $quantidade_pg";
+    AND P.ativo = 0 ";
+
+    if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+        $sqlIndexPasseadorWhere = "AND dt_passeio BETWEEN '$data_inicio' AND '$data_fim' ";
+    }else{
+        $sqlIndexPasseadorWhere = "";
+    }
+
+    $sqlIndexPaginacao= "LIMIT $incio, $quantidade_pg";
+    
+    $sqlIndexPasseador = $sqlIndexPasseadorSelect . $sqlIndexPasseadorWhere . $sqlIndexPaginacao;
     $resultadoSqlIndexPasseador = mysqli_query($conn,$sqlIndexPasseador);
     $contadorIndexPasseador = mysqli_num_rows($resultadoSqlIndexPasseador);
 ?>
+<div id="conteudo">
 <div class="container">
     <div class="col-md-12">
         <div class="page-header">
             <h2>Passeios Já Finalizados</h2>
         </div>
+        <form action="historico.php" method="get" name="busca" id="busca">
+        <div style="margin: auto; max-width: 300px;" align="right">
+            <table>
+                <tr>
+                    <td style="text-align: center;" colspan=5>Busca por Data</td>
+                </tr>
+                <tr>
+                <td>De:</td>
+                <td><input type="date" class="form-control" id="data_inicio" name="data_inicio" min="2018-01-01" max="2018-12-31"></td>
+                <td>Até:</td>
+                <td><input type="date" class="form-control" id="data_fim" name="data_fim" min="2018-01-01" max="2018-12-31"></td>
+                <td><button type="submit" class="btn btn-primary" id="busca" name="busca"><span class="glyphicon glyphicon-search"></span></button></td>
+                </tr>
+            </table>
+        </div>
+        </form>
+
+        <?php
+        if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+            
+            echo "<h5 style= 'text-align: center;'>Exibindo $contadorIndexPasseador resultado(s) entre '$data_inicio' e '$data_fim'. <a href='historico.php'> <b>Clique aqui</b> </a> para listar todos</h5>";
+        }
+        ?>
         <div class="panel panel-default">
         
             <table class="table table-striped">
@@ -95,6 +132,11 @@ if ($perfil == 'pas') {
             </table>
         </div>
         <?php
+            $flagBusca = 0;
+
+            if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+                $flagBusca = 1;
+            }
             //Verificar a pagina anterior e posterior
             $pagina_anterior = $pagina - 1;
             $pagina_posterior = $pagina + 1;
@@ -104,7 +146,7 @@ if ($perfil == 'pas') {
                 <li>
                     <?php
                     if($pagina_anterior != 0){ ?>
-                        <a href="http://www.petline.com.br/historico.php?pagina=<?php echo $pagina_anterior; ?>" aria-label="Previous">
+                        <a href="http://www.petline.com.br/historico.php?pagina=<?php echo $pagina_anterior; if($flagBusca == 1){ echo "&data_inicio=$data_inicio&data_fim=$data_fim";}?>" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     <?php }else{ ?>
@@ -114,12 +156,12 @@ if ($perfil == 'pas') {
                 <?php 
                 //Apresentar a paginacao
                 for($i = 1; $i < $num_pagina + 1; $i++){ ?>
-                    <li><a href="http://www.petline.com.br/historico.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                    <li><a href="http://www.petline.com.br/historico.php?pagina=<?php echo $i; if($flagBusca == 1){ echo "&data_inicio=$data_inicio&data_fim=$data_fim";}?>"><?php echo $i; ?></a></li>
                 <?php } ?>
                 <li>
                     <?php
                     if($pagina_posterior <= $num_pagina){ ?>
-                        <a href="http://www.petline.com.br/historico.php?pagina=<?php echo $pagina_posterior; ?>" aria-label="Previous">
+                        <a href="http://www.petline.com.br/historico.php?pagina=<?php echo $pagina_posterior; if($flagBusca == 1){ echo "&data_inicio=$data_inicio&data_fim=$data_fim";}?>" aria-label="Previous">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     <?php }else{ ?>
@@ -129,6 +171,7 @@ if ($perfil == 'pas') {
             </ul>
         </nav>
     </div>
+</div>
 </div>
 <?php }else if ($perfil == 'cli'){
     $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
@@ -157,7 +200,11 @@ if ($perfil == 'pas') {
     $num_pagina = ceil($contadorIndexClientes/$quantidade_pg);
     $incio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
-    $sqlIndexCliente = "SELECT DISTINCT
+    if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+        $data_inicio = $_GET['data_inicio'];
+        $data_fim = $_GET['data_fim'];
+    }
+    $sqlIndexClienteSelect = "SELECT DISTINCT
     CONCAT(U.nome,' ',U.sobrenome) as passeador,
     P.dt_passeio,
     P.hora_inicio,
@@ -173,16 +220,49 @@ if ($perfil == 'pas') {
     WHERE
     U1.id = $id
     AND PE.ativo = 1
-    AND P.ativo = 0
-    LIMIT $incio, $quantidade_pg";
+    AND P.ativo = 0 ";
+
+    if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+        $sqlIndexClienteWhere = "AND dt_passeio BETWEEN '$data_inicio' AND '$data_fim' ";
+    }else{
+        $sqlIndexClienteWhere = "";
+    }
+
+    $sqlIndexPaginacao = "LIMIT $incio, $quantidade_pg";
+
+    $sqlIndexCliente = $sqlIndexClienteSelect . $sqlIndexClienteWhere . $sqlIndexPaginacao;
     $resultadoSqlIndexCliente = mysqli_query($conn,$sqlIndexCliente);
     $contadorIndexCliente = mysqli_num_rows($resultadoSqlIndexCliente);
     ?>
+    <div id="conteudo">
     <div class="container">
         <div class="col-md-12">
             <div class="page-header">
                 <h2>Passeios Já Finalizados</h2>
             </div>
+            <form action="historico.php" method="get" name="busca" id="busca">
+            <div style="margin: auto; max-width: 300px;" align="right">
+                <table>
+                    <tr>
+                        <td style="text-align: center;" colspan=5>Busca por Data</td>
+                    </tr>
+                    <tr>
+                    <td>De:</td>
+                    <td><input type="date" class="form-control" id="data_inicio" name="data_inicio" min="2018-01-01" max="2018-12-31"></td>
+                    <td>Até:</td>
+                    <td><input type="date" class="form-control" id="data_fim" name="data_fim" min="2018-01-01" max="2018-12-31"></td>
+                    <td><button type="submit" class="btn btn-primary" id="busca" name="busca"><span class="glyphicon glyphicon-search"></span></button></td>
+                    </tr>
+                </table>
+            </div>
+            </form>
+
+            <?php
+            if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+                
+                echo "<h5 style= 'text-align: center;'>Exibindo $contadorIndexCliente resultado(s) entre '$data_inicio' e '$data_fim'. <a href='historico.php'> <b>Clique aqui</b> </a> para listar todos</h5>";
+            }
+            ?>
             <div class="panel panel-default">
             
                 <table class="table table-striped">
@@ -222,6 +302,11 @@ if ($perfil == 'pas') {
             </div>
         </div>
         <?php
+            $flagBusca = 0;
+
+            if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+                $flagBusca = 1;
+            }
             //Verificar a pagina anterior e posterior
             $pagina_anterior = $pagina - 1;
             $pagina_posterior = $pagina + 1;
@@ -231,7 +316,7 @@ if ($perfil == 'pas') {
                 <li>
                     <?php
                     if($pagina_anterior != 0){ ?>
-                        <a href="http://www.petline.com.br/historico.php?pagina=<?php echo $pagina_anterior; ?>" aria-label="Previous">
+                        <a href="http://www.petline.com.br/historico.php?pagina=<?php echo $pagina_anterior; if($flagBusca == 1){ echo "&data_inicio=$data_inicio&data_fim=$data_fim";}?>" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     <?php }else{ ?>
@@ -241,12 +326,12 @@ if ($perfil == 'pas') {
                 <?php 
                 //Apresentar a paginacao
                 for($i = 1; $i < $num_pagina + 1; $i++){ ?>
-                    <li><a href="http://www.petline.com.br/historico.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                    <li><a href="http://www.petline.com.br/historico.php?pagina=<?php echo $i; if($flagBusca == 1){ echo "&data_inicio=$data_inicio&data_fim=$data_fim";}?>"><?php echo $i; ?></a></li>
                 <?php } ?>
                 <li>
                     <?php
                     if($pagina_posterior <= $num_pagina){ ?>
-                        <a href="http://www.petline.com.br/historico.php?pagina=<?php echo $pagina_posterior; ?>" aria-label="Previous">
+                        <a href="http://www.petline.com.br/historico.php?pagina=<?php echo $pagina_posterior; if($flagBusca == 1){ echo "&data_inicio=$data_inicio&data_fim=$data_fim";}?>" aria-label="Previous">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
                     <?php }else{ ?>
@@ -256,6 +341,7 @@ if ($perfil == 'pas') {
             </ul>
         </nav>
     </div>
+</div>
 <?php }else{
     $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
 
@@ -283,7 +369,12 @@ if ($perfil == 'pas') {
     $num_pagina = ceil($contadorIndexAdms/$quantidade_pg);
     $incio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
-    $sqlIndexAdm = "SELECT DISTINCT
+    if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+        $data_inicio = $_GET['data_inicio'];
+        $data_fim = $_GET['data_fim'];
+    }
+
+    $sqlIndexAdmSelect = "SELECT DISTINCT
     CONCAT(U.nome,' ',U.sobrenome) as passeador,
     CONCAT(U1.nome,' ',U1.sobrenome) as cliente,
     P.dt_passeio,
@@ -299,16 +390,49 @@ if ($perfil == 'pas') {
     INNER JOIN pet PE ON (PE.id = S.id_pet)
     WHERE
     PE.ativo = 1
-    AND P.ativo = 0
-    LIMIT $incio, $quantidade_pg";
+    AND P.ativo = 0 ";
+
+    if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+        $sqlIndexClienteWhere = "AND dt_passeio BETWEEN '$data_inicio' AND '$data_fim' ";
+    }else{
+        $sqlIndexClienteWhere = "";
+    }
+
+    $sqlIndexPaginacao = "LIMIT $incio, $quantidade_pg";
+
+    $sqlIndexAdm = $sqlIndexAdmSelect . $sqlIndexClienteWhere . $sqlIndexPaginacao;
     $resultadoSqlIndexAdm = mysqli_query($conn,$sqlIndexAdm);
     $contadorIndexAdm = mysqli_num_rows($resultadoSqlIndexAdm);
     ?>
+    <div id="conteudo">
     <div class="container">
         <div class="col-md-12">
             <div class="page-header">
                 <h2>Passeios Já Finalizados</h2>
             </div>
+            <form action="historico.php" method="get" name="busca" id="busca">
+            <div style="margin: auto; max-width: 300px;" align="right">
+                <table>
+                    <tr>
+                        <td style="text-align: center;" colspan=5>Busca por Data</td>
+                    </tr>
+                    <tr>
+                    <td>De:</td>
+                    <td><input type="date" class="form-control" id="data_inicio" name="data_inicio" min="2018-01-01" max="2018-12-31"></td>
+                    <td>Até:</td>
+                    <td><input type="date" class="form-control" id="data_fim" name="data_fim" min="2018-01-01" max="2018-12-31"></td>
+                    <td><button type="submit" class="btn btn-primary" id="busca" name="busca"><span class="glyphicon glyphicon-search"></span></button></td>
+                    </tr>
+                </table>
+            </div>
+            </form>
+
+            <?php
+            if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+                
+                echo "<h5 style= 'text-align: center;'>Exibindo $contadorIndexAdm resultado(s) entre '$data_inicio' e '$data_fim'. <a href='historico.php'> <b>Clique aqui</b> </a> para listar todos</h5>";
+            }
+            ?>
             <div class="panel panel-default">
             
                 <table class="table table-striped">
@@ -352,6 +476,11 @@ if ($perfil == 'pas') {
         </div>
     </div>
     <?php
+        $flagBusca = 0;
+
+        if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+            $flagBusca = 1;
+        }
         //Verificar a pagina anterior e posterior
         $pagina_anterior = $pagina - 1;
         $pagina_posterior = $pagina + 1;
@@ -361,7 +490,7 @@ if ($perfil == 'pas') {
             <li>
                 <?php
                 if($pagina_anterior != 0){ ?>
-                    <a href="http://www.petline.com.br/historico.php?pagina=<?php echo $pagina_anterior; ?>" aria-label="Previous">
+                    <a href="http://www.petline.com.br/historico.php?pagina=<?php echo $pagina_anterior; if($flagBusca == 1){ echo "&data_inicio=$data_inicio&data_fim=$data_fim";}?>" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 <?php }else{ ?>
@@ -371,12 +500,12 @@ if ($perfil == 'pas') {
             <?php 
             //Apresentar a paginacao
             for($i = 1; $i < $num_pagina + 1; $i++){ ?>
-                <li><a href="http://www.petline.com.br/historico.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                <li><a href="http://www.petline.com.br/historico.php?pagina=<?php echo $i; if($flagBusca == 1){ echo "&data_inicio=$data_inicio&data_fim=$data_fim";}?>"><?php echo $i; ?></a></li>
             <?php } ?>
             <li>
                 <?php
                 if($pagina_posterior <= $num_pagina){ ?>
-                    <a href="http://www.petline.com.br/historico.php?pagina=<?php echo $pagina_posterior; ?>" aria-label="Previous">
+                    <a href="http://www.petline.com.br/historico.php?pagina=<?php echo $pagina_posterior; if($flagBusca == 1){ echo "&data_inicio=$data_inicio&data_fim=$data_fim";}?>" aria-label="Previous">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 <?php }else{ ?>
@@ -386,7 +515,7 @@ if ($perfil == 'pas') {
         </ul>
     </nav>
 <?php } ?>
-
+</div>
 <?php
 include "rodape.php";
 ?>
