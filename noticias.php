@@ -1,6 +1,6 @@
 <!--Seção De noticias-->
 <section id="conteudo">    
-        
+<div class="container">        
     <h2>Curiosidades</h2><hr>
         <div id="secnews">  
         <figure class="snip1208">
@@ -40,6 +40,6 @@
         </figure>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         </div>
-     
+    </div> 
 </section>
 <!--Fim Seção De noticias-->
