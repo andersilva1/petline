@@ -139,7 +139,7 @@ include "cabecalho.php";
 
                 <div class="form-group col-md-4">
                     <label for="dt_nascimento">Data de Nascimento</label>
-                    <input type="date" class="form-control" name="dt_nascimento" id="dt_nascimento">
+                    <input type="date" class="form-control" name="dt_nascimento" id="dt_nascimento" min="1990-01-01" max="2018-12-31">
                 </div>
 
                 <div class="form-row">

@@ -22,18 +22,18 @@ $resultadoConsultaUsuario = mysqli_query($conn,$sqlConsultaUsuario);
 $contadorConsultaUsuario = mysqli_num_rows($resultadoConsultaUsuario);
 ?>
 <div id="conteudo">
-    <h3>Consulta Usuário</h3>
-    <h4>Pesquise por uma palavra chave ou selecione o usuario na lista</h4>
+<div class="container">
+    <div class="page-header">
+        <h2>Usuários Cadastrados</h2>
+    </div>
     <br>
 
     <form action="consulta_usuario.php" method="get">
     <div style="margin: auto; max-width: 300px;" align="right">
         <table>
             <tr>
-                <td><input type="text" class="form-control" id="busca" name="busca" placeholder="Pesquise pelo nome"></td>
-                <td><button type="submit" class="btn btn-primary" id="busca">
-                    <span class="glyphicon glyphicon-search"> </span>
-                </button></td>
+                <td width=100%><input type="text" class="form-control" id="busca" name="busca" placeholder="Pesquise pelo nome"></td>
+                <td><button type="submit" class="btn btn-primary" id="busca"><span class="glyphicon glyphicon-search"></span></button></td>
             <tr>
         </table>
     </div>
@@ -46,7 +46,7 @@ $contadorConsultaUsuario = mysqli_num_rows($resultadoConsultaUsuario);
     }
     ?>
 
-    <div style="margin: auto; max-width: 800px;" class="table-responsive panel panel-default">
+    <div class="table-responsive panel panel-default">
         <table width=100% class="table table-striped">
         <thead>
             <tr>
@@ -66,9 +66,9 @@ $contadorConsultaUsuario = mysqli_num_rows($resultadoConsultaUsuario);
                         $perfil = $linhaUsuario['perfil'];
 
                         echo "<tr>
-                            <td width=50%>$nome</td>
-                            <td width=15%>$login</td>
-                            <td width=15%>$perfil</td>";
+                            <td width=40%>$nome</td>
+                            <td width=20%>$login</td>
+                            <td width=20%>$perfil</td>";
                         if ($ativo == 1) {
                             echo "
                             <td width=10% align=center><a href='http://www.petline.com.br/consulta/detalha_usuario.php?id=$id' class='btn btn-warning'><span class='glyphicon glyphicon-pencil'></span> Alterar</a></td>";?>
@@ -120,7 +120,8 @@ $contadorConsultaUsuario = mysqli_num_rows($resultadoConsultaUsuario);
             </li>
         </ul>
     </nav>
-                </div>    
+</div>
+</div>
 <?php
 include "../rodape.php";
 ?>

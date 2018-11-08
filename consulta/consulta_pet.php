@@ -34,17 +34,17 @@ $resultadoConsultaPet = mysqli_query($conn,$sqlConsultaPet);
 $contadorConsultaPet = mysqli_num_rows($resultadoConsultaPet);
 ?>
 <div id="conteudo">
-    <h3>Consulta Pet</h3>
-    <h4>Pesquise por uma palavra chave ou selecione o PET da lista</h4>
+<div class="container">
+    <div class="page-header">
+        <h2>PETs Cadastrados</h2>
+    </div>
     <br>
     <form action="consulta_pet.php" method="get">
     <div style="margin: auto; max-width: 300px;" align="right">
         <table>
             <tr>
-                <td><input type="text" class="form-control" id="busca" name="busca" placeholder="Pesquise pelo nome do PET"></td>
-                <td><button type="submit" class="btn btn-primary" id="busca">
-                    <span class="glyphicon glyphicon-search"> </span>
-                </button></td>
+                <td width=100%><input type="text" class="form-control" id="busca" name="busca" placeholder="Pesquise pelo nome do PET"></td>
+                <td><button type="submit" class="btn btn-primary" id="busca"><span class="glyphicon glyphicon-search"></span></button></td>
             <tr>
         </table>
     </div>
@@ -55,7 +55,7 @@ $contadorConsultaPet = mysqli_num_rows($resultadoConsultaPet);
         echo "<h5 style= 'text-align: center;'>Exibindo $contadorConsultaPet resultado(s) para '$busca'. <a href='consulta_pet.php'> <b>Clique aqui</b> </a> para listar todos</h5>";
     }
     ?>
-    <div style="margin: auto; max-width: 800px;" class="table-responsive panel panel-default">
+    <div class="table-responsive panel panel-default">
     <table width=100% class="table table-striped">
     <thead>
         <tr>
@@ -133,7 +133,7 @@ $contadorConsultaPet = mysqli_num_rows($resultadoConsultaPet);
         </ul>
     </nav>
 </div>
-
+</div>
 <?php
 include "../rodape.php";
 ?>

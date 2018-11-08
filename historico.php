@@ -64,6 +64,7 @@ if ($perfil == 'pas') {
     $resultadoSqlIndexPasseador = mysqli_query($conn,$sqlIndexPasseador);
     $contadorIndexPasseador = mysqli_num_rows($resultadoSqlIndexPasseador);
 ?>
+<div id="conteudo">
 <div class="container">
     <div class="col-md-12">
         <div class="page-header">
@@ -77,9 +78,9 @@ if ($perfil == 'pas') {
                 </tr>
                 <tr>
                 <td>De:</td>
-                <td><input type="date" class="form-control" id="data_inicio" name="data_inicio"></td>
+                <td><input type="date" class="form-control" id="data_inicio" name="data_inicio" min="2018-01-01" max="2018-12-31"></td>
                 <td>Até:</td>
-                <td><input type="date" class="form-control" id="data_fim" name="data_fim"></td>
+                <td><input type="date" class="form-control" id="data_fim" name="data_fim" min="2018-01-01" max="2018-12-31"></td>
                 <td><button type="submit" class="btn btn-primary" id="busca"><span class="glyphicon glyphicon-search"></span></button></td>
                 </tr>
             </table>
@@ -166,6 +167,7 @@ if ($perfil == 'pas') {
         </nav>
     </div>
 </div>
+</div>
 <?php }else if ($perfil == 'cli'){
     $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
 
@@ -193,7 +195,11 @@ if ($perfil == 'pas') {
     $num_pagina = ceil($contadorIndexClientes/$quantidade_pg);
     $incio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
-    $sqlIndexCliente = "SELECT DISTINCT
+    if (isset($_GET['busca'])) {
+        $data_inicio = $_POST['data_inicio'];
+        $data_fim = $_POST['data_fim'];
+    }
+    $sqlIndexClienteSelect = "SELECT DISTINCT
     CONCAT(U.nome,' ',U.sobrenome) as passeador,
     P.dt_passeio,
     P.hora_inicio,
@@ -209,16 +215,49 @@ if ($perfil == 'pas') {
     WHERE
     U1.id = $id
     AND PE.ativo = 1
-    AND P.ativo = 0
-    LIMIT $incio, $quantidade_pg";
+    AND P.ativo = 0 ";
+
+    if (isset($_GET['busca'])) {
+        $sqlIndexClienteWhere = "AND dt_passeio BETWEEN '$data_inicio' AND '$data_fim' ";
+    }else{
+        $sqlIndexClienteWhere = "";
+    }
+
+    $sqlIndexPaginacao = "LIMIT $incio, $quantidade_pg";
+
+    $sqlIndexCliente = $sqlIndexClienteSelect . $sqlIndexClienteWhere . $sqlIndexPaginacao;
     $resultadoSqlIndexCliente = mysqli_query($conn,$sqlIndexCliente);
     $contadorIndexCliente = mysqli_num_rows($resultadoSqlIndexCliente);
     ?>
+    <div id="conteudo">
     <div class="container">
         <div class="col-md-12">
             <div class="page-header">
                 <h2>Passeios Já Finalizados</h2>
             </div>
+            <form action="historico.php?busca" method="post">
+            <div style="margin: auto; max-width: 300px;" align="right">
+                <table>
+                    <tr>
+                        <td style="text-align: center;" colspan=5>Busca por Data</td>
+                    </tr>
+                    <tr>
+                    <td>De:</td>
+                    <td><input type="date" class="form-control" id="data_inicio" name="data_inicio" min="2018-01-01" max="2018-12-31"></td>
+                    <td>Até:</td>
+                    <td><input type="date" class="form-control" id="data_fim" name="data_fim" min="2018-01-01" max="2018-12-31"></td>
+                    <td><button type="submit" class="btn btn-primary" id="busca"><span class="glyphicon glyphicon-search"></span></button></td>
+                    </tr>
+                </table>
+            </div>
+            </form>
+
+            <?php
+            if (isset($_GET['busca'])) {
+                
+                echo "<h5 style= 'text-align: center;'>Exibindo $contadorIndexCliente resultado(s) entre '$data_inicio' e '$data_fim'. <a href='historico.php'> <b>Clique aqui</b> </a> para listar todos</h5>";
+            }
+            ?>
             <div class="panel panel-default">
             
                 <table class="table table-striped">
@@ -292,6 +331,7 @@ if ($perfil == 'pas') {
             </ul>
         </nav>
     </div>
+</div>
 <?php }else{
     $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
 
@@ -319,7 +359,12 @@ if ($perfil == 'pas') {
     $num_pagina = ceil($contadorIndexAdms/$quantidade_pg);
     $incio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
-    $sqlIndexAdm = "SELECT DISTINCT
+    if (isset($_GET['busca'])) {
+        $data_inicio = $_POST['data_inicio'];
+        $data_fim = $_POST['data_fim'];
+    }
+
+    $sqlIndexAdmSelect = "SELECT DISTINCT
     CONCAT(U.nome,' ',U.sobrenome) as passeador,
     CONCAT(U1.nome,' ',U1.sobrenome) as cliente,
     P.dt_passeio,
@@ -335,16 +380,49 @@ if ($perfil == 'pas') {
     INNER JOIN pet PE ON (PE.id = S.id_pet)
     WHERE
     PE.ativo = 1
-    AND P.ativo = 0
-    LIMIT $incio, $quantidade_pg";
+    AND P.ativo = 0 ";
+
+    if (isset($_GET['busca'])) {
+        $sqlIndexClienteWhere = "AND dt_passeio BETWEEN '$data_inicio' AND '$data_fim' ";
+    }else{
+        $sqlIndexClienteWhere = "";
+    }
+
+    $sqlIndexPaginacao = "LIMIT $incio, $quantidade_pg";
+
+    $sqlIndexAdm = $sqlIndexAdmSelect . $sqlIndexClienteWhere . $sqlIndexPaginacao;
     $resultadoSqlIndexAdm = mysqli_query($conn,$sqlIndexAdm);
     $contadorIndexAdm = mysqli_num_rows($resultadoSqlIndexAdm);
     ?>
+    <div id="conteudo">
     <div class="container">
         <div class="col-md-12">
             <div class="page-header">
                 <h2>Passeios Já Finalizados</h2>
             </div>
+            <form action="historico.php?busca" method="post">
+            <div style="margin: auto; max-width: 300px;" align="right">
+                <table>
+                    <tr>
+                        <td style="text-align: center;" colspan=5>Busca por Data</td>
+                    </tr>
+                    <tr>
+                    <td>De:</td>
+                    <td><input type="date" class="form-control" id="data_inicio" name="data_inicio" min="2018-01-01" max="2018-12-31"></td>
+                    <td>Até:</td>
+                    <td><input type="date" class="form-control" id="data_fim" name="data_fim" min="2018-01-01" max="2018-12-31"></td>
+                    <td><button type="submit" class="btn btn-primary" id="busca"><span class="glyphicon glyphicon-search"></span></button></td>
+                    </tr>
+                </table>
+            </div>
+            </form>
+
+            <?php
+            if (isset($_GET['busca'])) {
+                
+                echo "<h5 style= 'text-align: center;'>Exibindo $contadorIndexAdm resultado(s) entre '$data_inicio' e '$data_fim'. <a href='historico.php'> <b>Clique aqui</b> </a> para listar todos</h5>";
+            }
+            ?>
             <div class="panel panel-default">
             
                 <table class="table table-striped">
@@ -422,7 +500,7 @@ if ($perfil == 'pas') {
         </ul>
     </nav>
 <?php } ?>
-
+</div>
 <?php
 include "rodape.php";
 ?>
