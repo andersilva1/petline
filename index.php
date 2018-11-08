@@ -144,7 +144,7 @@ if ($perfil == 'pas') {
     </div>
 </div>
 </div>
-</div>
+
     <br>
     <?php
     include "noticias.php";
