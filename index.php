@@ -144,6 +144,11 @@ if ($perfil == 'pas') {
     </div>
 </div>
 </div>
+</div>
+    <br>
+    <?php
+    include "noticias.php";
+    ?>
 <?php }else if ($perfil == 'cli'){
     $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
 
@@ -271,7 +276,11 @@ if ($perfil == 'pas') {
             </ul>
         </nav>
     </div>
-</div>
+    </div>
+    <br>
+    <?php
+    include "noticias.php";
+    ?>
 <?php }else{
     $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
 
@@ -448,6 +457,7 @@ if ($perfil == 'pas') {
     </nav>
 <?php } ?>
 </div>
+<br>
 <?php
 include "rodape.php";
 ?>
