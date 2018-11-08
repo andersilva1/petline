@@ -299,9 +299,9 @@ if ($perfil == 'pas') {
     $num_pagina = ceil($contadorIndexAdms/$quantidade_pg);
     $incio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
-    if (isset($_GET['busca'])) {
-        $data_inicio = $_POST['data_inicio'];
-        $data_fim = $_POST['data_fim'];
+    if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+        $data_inicio = $_GET['data_inicio'];
+        $data_fim = $_GET['data_fim'];
     }
 
     $sqlIndexAdmSelect = "SELECT DISTINCT
@@ -322,7 +322,7 @@ if ($perfil == 'pas') {
     PE.ativo = 1
     AND P.ativo = 1 ";
 
-    if (isset($_GET['busca'])) {
+    if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
         $sqlIndexAdmWhere = "AND dt_passeio BETWEEN '$data_inicio' AND '$data_fim' ";
     }else{
         $sqlIndexAdmWhere = "";
@@ -341,7 +341,7 @@ if ($perfil == 'pas') {
                 <h2>Próximos Passeios</h2>
             </div>
             </div>
-            <form action="index.php?busca" method="post">
+            <form action="index.php?busca" method="get">
             <div style="margin: auto; max-width: 300px;" align="right">
                 <table>
                     <tr>
@@ -359,7 +359,7 @@ if ($perfil == 'pas') {
             </form>
 
             <?php
-            if (isset($_GET['busca'])) {
+            if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
                 
                 echo "<h5 style= 'text-align: center;'>Exibindo $contadorIndexAdm resultado(s) entre '$data_inicio' e '$data_fim'. <a href='index.php'> <b>Clique aqui</b> </a> para listar todos</h5>";
             }
@@ -407,6 +407,12 @@ if ($perfil == 'pas') {
         </div>
     </div>
     <?php
+        $flagBusca = 0;
+
+        if (isset($_GET['data_inicio']) and isset($_GET['data_fim'])) {
+            $flagBusca = 1;
+        }
+
         //Verificar a pagina anterior e posterior
         $pagina_anterior = $pagina - 1;
         $pagina_posterior = $pagina + 1;
@@ -416,7 +422,7 @@ if ($perfil == 'pas') {
             <li>
                 <?php
                 if($pagina_anterior != 0){ ?>
-                    <a href="index.php?pagina=<?php echo $pagina_anterior; ?>" aria-label="Previous">
+                    <a href="index.php?pagina=<?php echo $pagina_anterior; if($flagBusca == 1){ echo "&data_inicio=$data_inicio&data_fim=$data_fim";}?>" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 <?php }else{ ?>
@@ -426,12 +432,12 @@ if ($perfil == 'pas') {
             <?php 
             //Apresentar a paginacao
             for($i = 1; $i < $num_pagina + 1; $i++){ ?>
-                <li><a href="index.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                <li><a href="index.php?pagina=<?php echo $i; if($flagBusca == 1){ echo "&data_inicio=$data_inicio&data_fim=$data_fim";}?>"><?php echo $i; ?></a></li>
             <?php } ?>
             <li>
                 <?php
                 if($pagina_posterior <= $num_pagina){ ?>
-                    <a href="index.php?pagina=<?php echo $pagina_posterior; ?>" aria-label="Previous">
+                    <a href="index.php?pagina=<?php echo $pagina_posterior; if($flagBusca == 1){ echo "&data_inicio=$data_inicio&data_fim=$data_fim";}?>" aria-label="Previous">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 <?php }else{ ?>
