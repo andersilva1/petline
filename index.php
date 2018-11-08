@@ -51,6 +51,7 @@ if ($perfil == 'pas') {
     $resultadoSqlIndexPasseador = mysqli_query($conn,$sqlIndexPasseador);
     $contadorIndexPasseador = mysqli_num_rows($resultadoSqlIndexPasseador);
 ?>
+<div id="conteudo">
 <div class="container">
     <div class="col-md-12">
         <div class="page-header">
@@ -136,6 +137,11 @@ if ($perfil == 'pas') {
         <a href="http://www.petline.com.br/finaliza_servico.php" class="btn btn-success">Finalizar Serviço</a>
     </div>
 </div>
+</div>
+    <br>
+    <?php
+    include "noticias.php";
+    ?>
 <?php }else if ($perfil == 'cli'){
     $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
 
@@ -184,6 +190,7 @@ if ($perfil == 'pas') {
     $resultadoSqlIndexCliente = mysqli_query($conn,$sqlIndexCliente);
     $contadorIndexCliente = mysqli_num_rows($resultadoSqlIndexCliente);
     ?>
+    <div id="conteudo">
     <div class="container">
         <div class="col-md-12">
             <div class="page-header">
@@ -262,6 +269,11 @@ if ($perfil == 'pas') {
             </ul>
         </nav>
     </div>
+    </div>
+    <br>
+    <?php
+    include "noticias.php";
+    ?>
 <?php }else{
     $pagina = (isset($_GET['pagina']))? $_GET['pagina'] : 1;
 
@@ -310,6 +322,7 @@ if ($perfil == 'pas') {
     $resultadoSqlIndexAdm = mysqli_query($conn,$sqlIndexAdm);
     $contadorIndexAdm = mysqli_num_rows($resultadoSqlIndexAdm);
     ?>
+    <div id="conteudo">
     <div class="container">
         <div class="col-md-12">
             <div class="page-header">
@@ -392,7 +405,8 @@ if ($perfil == 'pas') {
         </ul>
     </nav>
 <?php } ?>
-
+</div>
+<br>
 <?php
 include "rodape.php";
 ?>

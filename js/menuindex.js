@@ -4,3 +4,13 @@ $(document).ready(function() {
       $(this).toggleClass("active");
     });
   });
+
+  //Inicio seção noticias
+    /* Demo purposes only */
+    $(".hover").mouseleave(
+      function () {
+        $(this).removeClass("hover");
+      }
+    );
+
+  //Fim seção noticias
