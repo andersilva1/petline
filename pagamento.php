@@ -66,7 +66,7 @@ while ($linhaSql = $resultadoSql -> fetch_array(MYSQLI_ASSOC)) {
 
     });
   </script>
-  
+<div id="conteudo">
 <div class="container">
     <div class="page-header"><h2>Pagamento</h2> </div> 
     <form novalidate autocomplete="on" method="POST">
@@ -118,4 +118,5 @@ while ($linhaSql = $resultadoSql -> fetch_array(MYSQLI_ASSOC)) {
         <h2 class="validation"></h2>
         </form>
     </div>
+</div>
 <?php include "rodape.php"; ?>

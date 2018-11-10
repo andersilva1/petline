@@ -1,7 +1,7 @@
 <?php
 include "cabecalho.php";
 ?>
-
+<div id="conteudo">
 <div class="container">
     <div class="col-md-12">
         <div class="page-header">
@@ -116,7 +116,7 @@ include "cabecalho.php";
 
                 <div class="col-md-1">
                     <label for="peso">Peso</label>
-                    <input type="number" class="form-control" name="peso" maxlength="255" id="peso">
+                    <input type="number" class="form-control" name="peso" id="peso">
                 </div>
 
                 <div class="clearfix"></div>
@@ -145,7 +145,7 @@ include "cabecalho.php";
                 <div class="form-row">
                     <div class="col-md-8">
                     <label for="descricao_pet">Descrição</label>
-                        <p><textarea class="form-control" name="descricao_pet" id="descricao_pet" cols="148" rows="10" placeholder="Escreva uma breve descrição do seu pet"></textarea></p>
+                        <p><textarea class="form-control" name="descricao_pet" id="descricao_pet" cols="148" rows="10" maxlength="255" placeholder="Escreva uma breve descrição do seu pet"></textarea></p>
                     </div>
                 </div>
 
@@ -162,5 +162,5 @@ include "cabecalho.php";
         </form>
     </div>
 </div>
-
+</div>
 <?php include "rodape.php"; ?>

@@ -46,21 +46,13 @@ $id = $_SESSION['id'];
               echo "
                   <li>
                     <a href='http://www.petline.com.br/consulta/consulta_usuario.php'>Consulta Usuário</a>
-
+                    <a href='http://www.petline.com.br/consulta/consulta_pet.php'>Consulta PETs</a>
+                    <a href='http://www.petline.com.br/consulta/relatorio.php'>Relatórios</a>
                     <a href='#pageSubmenu' data-toggle='collapse' aria-expanded='false'>Históricos</a>
                     <ul class='collapse list-unstyled' id='pageSubmenu'>
                       <li><a href='http://www.petline.com.br/historico.php'>Histórico Passeador</a></li>
                       <li><a href='http://www.petline.com.br/historico.php'>Histórico Cliente</a></li>          
                     </ul>
-                  </li>
-                  <li>
-                    <a href='http://www.petline.com.br/consulta/consulta_pet.php'>Meus Pets</a>
-                  </li>
-                  <li>
-                    <a href='http://www.petline.com.br/contrata_pacote.php'>Contratar Pacote</a>
-                  </li>
-                  <li>
-                    <a href='http://www.petline.com.br/cadastro_agenda.php'>Agenda</a>
                   </li>";
                 break;
                 
@@ -70,7 +62,10 @@ $id = $_SESSION['id'];
                     <a href='http://www.petline.com.br/cadastro_agenda.php'>Agenda</a>
                   </li>
                   <li>
-                    <a href='http://www.petline.com.br/historico.php'>Histórico  Passeador</a>
+                    <a href='http://www.petline.com.br/historico.php'>Histórico  de Passeios</a>
+                  </li>
+                  <li>
+                    <a href='http://www.petline.com.br/consulta/relatorio.php'>Relatórios</a>
                   </li>";
                   break;
 
@@ -83,9 +78,11 @@ $id = $_SESSION['id'];
                         <a href='http://www.petline.com.br/contrata_pacote.php'>Contratar Pacote</a>
                       </li>
                       <li>
-                        <a href='http://www.petline.com.br/historico.php'>Histórico  Cliente</a>
+                        <a href='http://www.petline.com.br/historico.php'>Histórico  de Passeios</a>
                       </li>
-                    ";
+                      <li>
+                        <a href='http://www.petline.com.br/consulta/relatorio.php'>Relatórios</a>
+                      </li>";
                     break;
             }
       ?>    

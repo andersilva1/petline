@@ -81,7 +81,7 @@ $contadorConsultaUsuario = mysqli_num_rows($resultadoConsultaUsuario);
                         }
                     }
                 }else{
-                    echo "<h4>Não existem usuario cadastrados</h4>";
+                    echo "<h4>Usuário não encontrado</h4>";
                 }
             ?>
         </table>

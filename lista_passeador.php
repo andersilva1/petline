@@ -9,6 +9,7 @@ $sqlConsultaPacote = "SELECT id, dt_passeio, hora_inicio, hora_fim FROM pacote W
 $resultadoConsultaPacote = mysqli_query($conn,$sqlConsultaPacote);
 $contadorConsultaPacote = mysqli_num_rows($resultadoConsultaPacote);
 ?>
+<div id="conteudo">
 <div class="container">
     <div class="col-md-6">
         <div class="page-header">
@@ -72,5 +73,6 @@ $contadorConsultaPacote = mysqli_num_rows($resultadoConsultaPacote);
     </div>
     <div class="col-md-12" align="left">
         <a href="http://www.petline.com.br/lista_pet.php" class="btn btn-primary">Voltar</a>
+    </div>
     </div>
 </div>

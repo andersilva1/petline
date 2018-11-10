@@ -234,7 +234,7 @@ if (isset($_GET['cod'])) {
 
             <div class="form-group col-md-6">
                 <label for="dt_nascimento">Data de Nascimento</label>
-                <input type="date" class="form-control" name="dt_nascimento" id="dt_nascimento" min="1950-01-01" max="2018-12-31" required>
+                <input type="date" class="form-control" name="dt_nascimento" id="dt_nascimento" min="1900-01-01" max="2018-12-31" required>
             </div>
 
             <div class="form-group col-md-6">
@@ -315,7 +315,7 @@ if (isset($_GET['cod'])) {
             
             <div class="form-row">
                 <div class="col-md-12">
-                    <p><textarea class="form-control" name="descricao" id="descricao" cols="148" rows="10" placeholder="Descrição"></textarea></p>
+                    <p><textarea class="form-control" name="descricao" id="descricao" cols="148" rows="10" placeholder="Descrição" maxlength="255"></textarea></p>
                 </div>
             </div>
 

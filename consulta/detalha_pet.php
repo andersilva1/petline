@@ -23,7 +23,7 @@ include "../cabecalho.php";
         }
     }
 ?>
-
+<div id="conteudo">
 <div class="container">
     <div class="col-md-12">
         <div class="page-header">
@@ -79,6 +79,7 @@ include "../cabecalho.php";
             </div>
         </form>
     </div>
+</div>
 </div>
 
 <?php include "../rodape.php"; ?>
