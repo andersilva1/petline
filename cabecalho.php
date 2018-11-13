@@ -47,7 +47,7 @@ $id = $_SESSION['id'];
                   <li>
                     <a href='http://www.petline.com.br/consulta/consulta_usuario.php'>Consulta Usuário</a>
                     <a href='http://www.petline.com.br/consulta/consulta_pet.php'>Consulta PETs</a>
-                    <a href='http://www.petline.com.br/consulta/relatorio.php'>Relatórios</a>
+                    <a href='http://www.petline.com.br/relatorio.php'>Relatórios</a>
                     <a href='#pageSubmenu' data-toggle='collapse' aria-expanded='false'>Históricos</a>
                     <ul class='collapse list-unstyled' id='pageSubmenu'>
                       <li><a href='http://www.petline.com.br/historico.php'>Histórico Passeador</a></li>

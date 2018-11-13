@@ -70,7 +70,7 @@ if ($perfil == 'pas') {
         <div class="page-header">
             <h2>Passeios Já Finalizados</h2>
         </div>
-        <form action="historico.php?busca" method="get" name="busca" id="busca">
+        <form action="historico.php?busca" method="get">
         <div style="margin: auto; max-width: 300px;" align="right">
             <table>
                 <tr>
@@ -240,7 +240,7 @@ if ($perfil == 'pas') {
             <div class="page-header">
                 <h2>Passeios Já Finalizados</h2>
             </div>
-            <form action="historico.php?busca" method="get" name="busca" id="busca">
+            <form action="historico.php?busca" method="get">
             <div style="margin: auto; max-width: 300px;" align="right">
                 <table>
                     <tr>
@@ -410,7 +410,7 @@ if ($perfil == 'pas') {
             <div class="page-header">
                 <h2>Passeios Já Finalizados</h2>
             </div>
-            <form action="historico.php?busca" method="get" name="busca" id="busca">
+            <form action="historico.php?busca" method="get">
             <div style="margin: auto; max-width: 300px;" align="right">
                 <table>
                     <tr>
