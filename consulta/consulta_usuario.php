@@ -21,6 +21,8 @@ if (isset($_GET['busca'])) {
 $resultadoConsultaUsuario = mysqli_query($conn,$sqlConsultaUsuario);
 $contadorConsultaUsuario = mysqli_num_rows($resultadoConsultaUsuario);
 ?>
+<img src="../img/pagConsulUser.jpg" alt="" style="width:100%;">
+<br></br>
 <div id="conteudo">
 <div class="container">
     <div class="page-header">

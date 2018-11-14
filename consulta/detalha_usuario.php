@@ -156,6 +156,8 @@ function teste(e)
     <!-- Latest compiled JavaScript -->
     <script src='http://www.petline.com.br/js/bootstrap.min.js'></script>
 </head>
+<img src="../img/pagMeuPerf.jpg" alt="" style="width:100%;">
+<br></br>
 <div id="conteudo">
     <div class="container">
 

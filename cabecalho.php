@@ -65,7 +65,7 @@ $id = $_SESSION['id'];
                     <a href='http://www.petline.com.br/historico.php'>Histórico  de Passeios</a>
                   </li>
                   <li>
-                    <a href='http://www.petline.com.br/consulta/relatorio.php'>Relatórios</a>
+                    <a href='http://www.petline.com.br/relatorio.php'>Relatórios</a>
                   </li>";
                   break;
 
@@ -81,7 +81,7 @@ $id = $_SESSION['id'];
                         <a href='http://www.petline.com.br/historico.php'>Histórico  de Passeios</a>
                       </li>
                       <li>
-                        <a href='http://www.petline.com.br/consulta/relatorio.php'>Relatórios</a>
+                        <a href='http://www.petline.com.br/relatorio.php'>Relatórios</a>
                       </li>";
                     break;
             }
