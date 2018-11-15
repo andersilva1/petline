@@ -33,6 +33,8 @@ if (isset($_GET['busca'])) {
 $resultadoConsultaPet = mysqli_query($conn,$sqlConsultaPet);
 $contadorConsultaPet = mysqli_num_rows($resultadoConsultaPet);
 ?>
+<img src="../img/pagPets.jpg" alt="" style="width:100%;">
+<br></br>
 <div id="conteudo">
 <div class="container">
     <div class="page-header">

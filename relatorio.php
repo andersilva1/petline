@@ -1,7 +1,8 @@
 <?php
 include "cabecalho.php";
 ?>
-
+<img src="../img/pagRelat.jpg" alt="" style="width:100%;">
+<br></br>
 <div id="conteudo">
     <div class="container">
         <div class="page-header">

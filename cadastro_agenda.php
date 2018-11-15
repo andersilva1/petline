@@ -15,6 +15,8 @@ if (isset($_GET['add'])) {
     $resultadoAdicionaDia = mysqli_query($conn, $sqlAdicionaDia);
 }
 ?>
+<img src="../img/pagAgenda.jpg" alt="" style="width:100%;">
+<br></br>
 <div id="conteudo">
 <div class="container">
     <div class="col-md-12">

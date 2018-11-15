@@ -53,6 +53,8 @@ if ($perfil == 'pas') {
     $resultadoSqlIndexPasseador = mysqli_query($conn,$sqlIndexPasseador);
     $contadorIndexPasseador = mysqli_num_rows($resultadoSqlIndexPasseador);
 ?>
+<img src="img/paginicial.jpg" alt="" style="width:100%;">
+<br></br>
 <div id="conteudo">
 <div class="container">
     <div class="col-md-12">
@@ -197,6 +199,8 @@ if ($perfil == 'pas') {
     $resultadoSqlIndexCliente = mysqli_query($conn,$sqlIndexCliente);
     $contadorIndexCliente = mysqli_num_rows($resultadoSqlIndexCliente);
     ?>
+<img src="img/paginicial.jpg" alt="" style="width:100%;">
+<br></br>
 <div id="conteudo">
     <div class="container">
         <div class="col-md-12">
@@ -343,6 +347,8 @@ if ($perfil == 'pas') {
     $resultadoSqlIndexAdm = mysqli_query($conn,$sqlIndexAdm);
     $contadorIndexAdm = mysqli_num_rows($resultadoSqlIndexAdm);
     ?>
+<img src="img/paginicial.jpg" alt="" style="width:100%;">
+<br></br>    
 <div id="conteudo">
     <div class="container">
         <div class="col-md-12">
