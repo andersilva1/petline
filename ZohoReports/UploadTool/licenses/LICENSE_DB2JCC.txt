@@ -1,0 +1,51 @@
+Terms and Agreements of the license:
+
+ Redistribution Information                                                 
+                                                                            
+ If You have developed an application that is dependent upon the files or   
+ modules listed below or                                                    
+ located in the directory named below, You may distribute these files or    
+ modules, subject to the                                                    
+ following terms:                                                           
+                                                                            
+ 1) The files or modules must be in object code.                            
+ 2) You will indemnify IBM or third parties that provide IBM products       
+ ("Third Parties") from and                                                 
+      against any third party claim arising out of the use or distribution  
+ of Your application.                                                       
+ 3) You may not use the same path name as the original files/modules.       
+ 4) You may not use IBM's or Third Parties' names or trademarks in          
+ connection with the marketing                                              
+      of Your applications without IBM's or Third Parties' prior written    
+ consent.                                                                   
+ 5) IBM or Third Parties provide copies of these files or modules "AS IS,"  
+ i.e., You are responsible for                                              
+     all technical assistance for Your application.                         
+ 6) In Your license agreement with the recipient, You will notify the       
+ recipient that these files or modules may                                  
+      not be 1) used for any purpose other than to enable the application,  
+ 2) copied (except for backup                                               
+     purposes), 3) further distributed, or 4) reverse assembled, reverse    
+ compiled, or otherwise translated.                                         
+                                                                            
+ db2jcc.jar                                                                 
+ db2jcc_license_c.jar                                                       
+                                                                            
+ Your application containing a copy of the above referenced files/modules   
+ must be labeled as follows:                                                
+                                                                            
+ "CONTAINS                                                                  
+                                                                            
+ Runtime Modules of                                                         
+ DB2 Universal Database JDBC Type-4 Driver                                  
+                                                                            
+ (c) Copyright IBM Corporation 2004                                         
+ All Rights Reserved"                                                       
+                                                                            
+ Program-unique Terms                                                       
+                                                                            
+ The Program is made available at no charge.                                
+                                                                            
+ The Money-Back Guarantee has no applicability.                             
+                                                                            
+ This license serves as a Proof of Entitlement (PoE) for this Program       

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Queries>
+  <Query dbname="PETLINE" tablename="PETLINE-PACOTES" importtype="TRUNCATEADD" matchingcols="">
+    SELECT * FROM vw_pacote
+  </Query>
+  <Query dbname="PETLINE" tablename="PETLINE-SERVICO" importtype="TRUNCATEADD" matchingcols="">  
+    SELECT * FROM vw_servico
+  </Query>
+</Queries>

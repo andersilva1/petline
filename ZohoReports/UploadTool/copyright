@@ -1,0 +1,52 @@
+Zoho Reports Uploader Tool 
+(c) Copyright 2010 Zoho Corporation.
+All rights reserved.
+
+This software product, including software and documentation, with the
+exceptions listed in Acknowledgments (See Acknowledgments below) is the
+property of Zoho Corporation.  No re-distribution or re-sale of any part
+of this software is permitted without the express written consent of
+Zoho Corporation.
+
+ZOHO CORPORATION. DISCLAIMS ALL WARRANTIES, EITHER
+EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES
+OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE, WITH REGARD
+TO THE SOFTWARE PRODUCT.
+
+IN NO EVENT SHALL ZOHO CORPORATION. BE LIABLE FOR ANY
+SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER
+(INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS,
+BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR ANY OTHER
+PECUNIARY LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THE
+SOFTWARE PRODUCT, EVEN IF ZOHO CORPORATION HAS BEEN
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+ACKNOWLEDGMENTS
+---------------
+
+We wish to acknowledge the following copyrighted works that make up
+portions of Zoho Reports Uploader Tool
+
+Java(TM) 2 Runtime Environment, Standard Edition Version 1.5.0
+developed by Sun Microsystems, Inc. Please see the file ZohoReports/UploadTool/jre/COPYRIGHT
+
+Tomcat Version 5.5.20 - Copyright 2004(c). This product included software developed by the Apache Software Foundation (http://www.apache.org/). For license details, please see the file apache/tomcat/LICENSE
+
+commons-codec.jar - Copyright 2004(c). This product includes software developed by The Apache Software Foundation (http://www.apache.org/). For license details, please see the file ZohoReports/UploadTool/licenses/LICENSE_CODEC.txt.
+
+commons-logging.jar - Copyright 2004(c). This product includes software developed by The Apache Software Foundation (http://www.apache.org/). For license details, please see the file ZohoReports/UploadTool/licenses/LICENSE_COMMONS_LOGGING.txt.
+
+commons-logging-api.jar - Copyright 2004(c). This product includes software developed by The Apache Software Foundation (http://www.apache.org/). For license details, please see the file ZohoReports/UploadTool/licenses/LICENSE_COMMONS_LOGGING.txt.
+
+commons-httpclient-3.1.jar - Copyright 2004(c). This product includes software developed by The Apache Software Foundation (http://www.apache.org/). For license details, please see the file ZohoReports/UploadTool/licenses/LICENSE_COMMONS_HTTPCLIENT.txt.
+
+csv.jar. This product includes software developed by The Apache Software Foundation (http://www.apache.org/). For license details, please see the file ZohoReports/UploadTool/licenses/LICENSE_COMMONS_CSV.txt.
+
+jtds-1.2.jar - Copyright Sourceforge.net. The jtds-1.2.jar developed by "The jTDS Project" at Sourceforge. For license details, please see the file ZohoReports/UploadTool/licenses/LICENSE_JTDS.txt.
+
+ojdbc14.jar - Copyright (c). This product includes software developed by The Oracle Technology Network (http://www.oracle.com/). For license details, please see the file ZohoReports/UploadTool/licenses/LICENSE_ORACLE.txt.
+
+postgresql-8.2-505.jdbc3.jar - Copyright (c) 1997-2005. This product includes software developed by PostgreSQL Global Development Group(http://www.postgresql.org/). For license details, please see the file ZohoReports/UploadTool/licenses/LICENSE_POSTGRESQLJDBCDRIVER.txt.
+
+JSCalender - Copyright (C) 1991, 1999. This product includes software developed by Free Software Foundation. For license details, please see the file ZohoReports/UploadTool/licenses/LICENSE_JSCALENDAR.html
+

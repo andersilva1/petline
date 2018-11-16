@@ -103,7 +103,7 @@ if ($perfil == 'pas') {
                             <?php echo "</tr>";
                     }
                 }else{
-                    echo "<h4>Não existem PETs cadastrados</h4>";
+                    echo "<h4>Não existem passeios a serem realizados</h4>";
                 }
             ?>                 
             </tbody>

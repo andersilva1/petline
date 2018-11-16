@@ -1,0 +1,110 @@
+
+2018/11/15 21:00:19 BRST:
+Driver class is missing. Ensure the required jar file for the current database is placed in lib folder.
+2018/11/15 21:00:19 BRST:
+java.lang.ClassNotFoundException: org.gjt.mm.mysql.Driver
+	at java.net.URLClassLoader$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClassInternal(Unknown Source)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Unknown Source)
+	at com.adventnet.zoho.client.report.advancedtool.AdvancedUploader.startUpload(AdvancedUploader.java:424)
+	at com.adventnet.zoho.client.report.advancedtool.ZohoReportUploadDataFromDB.main(ZohoReportUploadDataFromDB.java:49)
+
+2018/11/15 21:04:14 BRST:
+
+Error in executing your query. Please check the query information.
+
+--------------------------
+Info From XML
+--------------------------
+Query ID :: 1
+Target DB Name :: PETLINE
+Target table Name :: PETLINE-PACOTES
+Import Type :: TRUNCATEADD
+Matching Cols :: 
+Select Cols :: 
+Skip top :: 0
+Batch Size :: 10000
+BatchImport :: true
+Queue Size :: -1
+Query :: SELECT
+      CONCAT(U.nome,' ',U.sobrenome) as passeador,
+      CONCAT(U1.nome,' ',U1.sobrenome) as cliente,
+      P.nome as pacote,
+      MIN(P.dt_passeio) as data_contratacao,
+      fcRetornaValorPacote(U1.id) as valor_pacote
+    FROM servico S
+    INNER JOIN usuario U ON (S.id_passeador = U.id AND U.perfil = 'pas')
+    INNER JOIN usuario U1 ON (S.id_cliente = U1.id AND U1.perfil = 'cli')
+    INNER JOIN pacote P ON (P.id_usuario = U1.id)
+    GROUP BY P.id_usuario
+Collection Name :: null
+Field Names :: null
+Field Alias Mapping :: null
+--------------------------
+
+2018/11/15 21:04:14 BRST:
+java.sql.SQLException: Syntax error or access violation message from server: "FUNCTION fcRetornaValorPacote does not exist"
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2001)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1168)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1279)
+	at com.mysql.jdbc.MysqlIO.sqlQuery(MysqlIO.java:1225)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2278)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2225)
+	at com.mysql.jdbc.Statement.executeQuery(Statement.java:1163)
+	at com.adventnet.zoho.client.report.advancedtool.AdvancedUploader.startUpload(AdvancedUploader.java:459)
+	at com.adventnet.zoho.client.report.advancedtool.ZohoReportUploadDataFromDB.main(ZohoReportUploadDataFromDB.java:49)
+
+2018/11/15 21:04:14 BRST:
+
+Error in executing your query. Please check the query information.
+
+--------------------------
+Info From XML
+--------------------------
+Query ID :: 2
+Target DB Name :: PETLINE
+Target table Name :: PETLINE-SERVICO
+Import Type :: TRUNCATEADD
+Matching Cols :: 
+Select Cols :: 
+Skip top :: 0
+Batch Size :: 10000
+BatchImport :: true
+Queue Size :: -1
+Query :: SELECT DISTINCT
+      CONCAT(U.nome,' ',U.sobrenome) as passeador,
+      CONCAT(U1.nome,' ',U1.sobrenome) as cliente,
+      P.dt_passeio,
+      P.hora_inicio,
+      P.hora_fim,
+      PE.nome as nome_pet,
+      P.nome as pacote
+    FROM servico S
+    INNER JOIN usuario U ON (S.id_passeador = U.id AND U.perfil = 'pas')
+    INNER JOIN usuario U1 ON (S.id_cliente = U1.id AND U1.perfil = 'cli')
+    INNER JOIN pacote P ON (P.id_usuario = U1.id)
+    INNER JOIN pet PE ON (PE.id = S.id_pet)
+    WHERE
+      DATE_FORMAT(P.dt_passeio,'%Y-%m') = DATE_FORMAT(NOW(),'%Y-%m')
+Collection Name :: null
+Field Names :: null
+Field Alias Mapping :: null
+--------------------------
+
+2018/11/15 21:04:14 BRST:
+java.sql.SQLException: No database selected
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2001)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1168)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1279)
+	at com.mysql.jdbc.MysqlIO.sqlQuery(MysqlIO.java:1225)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2278)
+	at com.mysql.jdbc.Connection.execSQL(Connection.java:2225)
+	at com.mysql.jdbc.Statement.executeQuery(Statement.java:1163)
+	at com.adventnet.zoho.client.report.advancedtool.AdvancedUploader.startUpload(AdvancedUploader.java:459)
+	at com.adventnet.zoho.client.report.advancedtool.ZohoReportUploadDataFromDB.main(ZohoReportUploadDataFromDB.java:49)
