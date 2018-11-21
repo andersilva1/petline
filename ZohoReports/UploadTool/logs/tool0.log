@@ -1053,3 +1053,162 @@ Start Time : Thu Nov 15 23:06:00 BRST 2018
 Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
 Query 2: 16/16 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
 Completion Time : Thu Nov 15 23:06:11 BRST 2018
+2018/11/20 22:57:31 BRST: OS : Windows NT (unknown) 6.2 x86
+2018/11/20 22:57:31 BRST: JVM Version : 1.6.0_16
+2018/11/20 22:57:31 BRST:System Properties
+os.arch :: x86
+java.version :: 1.6.0_16
+TESTRUN :: false
+CONN_PARAMS_FILE :: conf\database_connection_params.conf
+user.dir :: C:\petline\ZohoReports\UploadTool
+os.name :: Windows NT (unknown)
+os.version :: 6.2
+CONFFILE :: conf\common_params.conf
+TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
+IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
+
+2018/11/20 22:57:31 BRST:Common Properties
+ZOHO_CANOVERRIDE :: false
+ZOHO_CREATE_TABLE :: true
+REPORT_SERVER_URL :: https://reportsapi.zoho.com
+DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
+USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+PROXYPORT :: 
+ZOHO_AUTO_IDENTIFY :: true
+USEPROXY :: false
+ZOHO_SUPPORT_MAILID :: support@zohoreports.com
+IAM_SERVER_URL :: https://accounts.zoho.com
+PROXYHOST :: 
+LINES_TO_SEND :: 10000
+ZOHO_TRUNCATE_COLNAMES :: false
+ZOHO_FILE_ENCODING :: UTF-8
+
+2018/11/20 22:57:31 BRST:Database Properties
+PORT :: 3306
+HOSTNAME :: localhost
+FIREBIRDFILENAME :: 
+DBTYPE :: mysql
+MDBFILENAME :: 
+SQLITEFILENAME :: 
+USERNAME :: root
+DBNAME :: petline
+
+2018/11/20 22:57:41 BRST:Time taken for sending to server:1066
+2018/11/20 22:57:41 BRST: 2 records uploaded for the query ID :: 1
+2018/11/20 22:57:41 BRST:Time taken for sending to server:1034
+2018/11/20 22:57:41 BRST: 16 records uploaded for the query ID :: 2
+2018/11/20 22:57:45 BRST:
+All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
+
+2018/11/20 22:57:45 BRST: Upload Tool - Summary
+Start Time : Tue Nov 20 22:57:34 BRST 2018
+Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
+Query 2: 16/16 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
+Completion Time : Tue Nov 20 22:57:45 BRST 2018
+2018/11/20 23:00:49 BRST: OS : Windows NT (unknown) 6.2 x86
+2018/11/20 23:00:49 BRST: JVM Version : 1.6.0_16
+2018/11/20 23:00:49 BRST:System Properties
+os.arch :: x86
+java.version :: 1.6.0_16
+TESTRUN :: false
+CONN_PARAMS_FILE :: conf\database_connection_params.conf
+user.dir :: C:\petline\ZohoReports\UploadTool
+os.name :: Windows NT (unknown)
+os.version :: 6.2
+CONFFILE :: conf\common_params.conf
+TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
+IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
+
+2018/11/20 23:00:49 BRST:Common Properties
+ZOHO_CANOVERRIDE :: false
+ZOHO_CREATE_TABLE :: true
+REPORT_SERVER_URL :: https://reportsapi.zoho.com
+DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
+USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+PROXYPORT :: 
+ZOHO_AUTO_IDENTIFY :: true
+USEPROXY :: false
+ZOHO_SUPPORT_MAILID :: support@zohoreports.com
+IAM_SERVER_URL :: https://accounts.zoho.com
+PROXYHOST :: 
+LINES_TO_SEND :: 10000
+ZOHO_TRUNCATE_COLNAMES :: false
+ZOHO_FILE_ENCODING :: UTF-8
+
+2018/11/20 23:00:49 BRST:Database Properties
+PORT :: 3306
+HOSTNAME :: localhost
+FIREBIRDFILENAME :: 
+DBTYPE :: mysql
+MDBFILENAME :: 
+SQLITEFILENAME :: 
+USERNAME :: root
+DBNAME :: petline
+
+2018/11/20 23:00:57 BRST:Time taken for sending to server:1088
+2018/11/20 23:00:57 BRST:Time taken for sending to server:1088
+2018/11/20 23:00:57 BRST: 2 records uploaded for the query ID :: 1
+2018/11/20 23:00:57 BRST: 16 records uploaded for the query ID :: 2
+2018/11/20 23:01:00 BRST:
+All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
+
+2018/11/20 23:01:00 BRST: Upload Tool - Summary
+Start Time : Tue Nov 20 23:00:50 BRST 2018
+Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
+Query 2: 16/16 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
+Completion Time : Tue Nov 20 23:01:00 BRST 2018
+2018/11/20 23:03:01 BRST: OS : Windows NT (unknown) 6.2 x86
+2018/11/20 23:03:01 BRST: JVM Version : 1.6.0_16
+2018/11/20 23:03:01 BRST:System Properties
+os.arch :: x86
+java.version :: 1.6.0_16
+TESTRUN :: false
+CONN_PARAMS_FILE :: conf\database_connection_params.conf
+user.dir :: C:\petline\ZohoReports\UploadTool
+os.name :: Windows NT (unknown)
+os.version :: 6.2
+CONFFILE :: conf\common_params.conf
+TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
+IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
+
+2018/11/20 23:03:01 BRST:Common Properties
+ZOHO_CANOVERRIDE :: false
+ZOHO_CREATE_TABLE :: true
+REPORT_SERVER_URL :: https://reportsapi.zoho.com
+DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
+USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+PROXYPORT :: 
+ZOHO_AUTO_IDENTIFY :: true
+USEPROXY :: false
+ZOHO_SUPPORT_MAILID :: support@zohoreports.com
+IAM_SERVER_URL :: https://accounts.zoho.com
+PROXYHOST :: 
+LINES_TO_SEND :: 10000
+ZOHO_TRUNCATE_COLNAMES :: false
+ZOHO_FILE_ENCODING :: UTF-8
+
+2018/11/20 23:03:01 BRST:Database Properties
+PORT :: 3306
+HOSTNAME :: localhost
+FIREBIRDFILENAME :: 
+DBTYPE :: mysql
+MDBFILENAME :: 
+SQLITEFILENAME :: 
+USERNAME :: root
+DBNAME :: petline
+
+2018/11/20 23:03:08 BRST:Time taken for sending to server:1000
+2018/11/20 23:03:08 BRST:Time taken for sending to server:1021
+2018/11/20 23:03:08 BRST: 16 records uploaded for the query ID :: 2
+2018/11/20 23:03:08 BRST: 2 records uploaded for the query ID :: 1
+2018/11/20 23:03:12 BRST:
+All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
+
+2018/11/20 23:03:12 BRST: Upload Tool - Summary
+Start Time : Tue Nov 20 23:03:02 BRST 2018
+Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
+Query 2: 16/16 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
+Completion Time : Tue Nov 20 23:03:12 BRST 2018
