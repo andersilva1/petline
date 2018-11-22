@@ -94,6 +94,8 @@ if (isset($_GET['add'])) {
     }
 }
 ?>
+<img src="../img/pagContrataPac.jpg" alt="Imagem titulo pagina de contratar pacotes" style="width:100%;">
+<br></br>
 <div id="conteudo">
 <div class="container">
     <div class="col-md-12">
@@ -128,6 +130,8 @@ if (isset($_GET['add'])) {
                     $contadorConsultaPacote = mysqli_num_rows($resultadoConsultaPacote);
                     $quantidadePasseio = 0;
                 ?>
+                <br></br>
+                <hr>
                 <div class="table-responsive panel panel-default col-md-12">
                     <div class="panel-heading" align="center">Passeios Ativos</div>
                 <table class="table table-striped">
