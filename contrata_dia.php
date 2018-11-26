@@ -105,17 +105,17 @@ if (isset($_GET['add'])) {
             <div class="form-row">
                 <div class="col-md-4">
                     <label for="dt_passeio">Data Passeio</label>
-                    <input type="date" class="form-control" name="dt_passeio" id="dt_passeio">
+                    <input type="date" class="form-control" name="dt_passeio" id="dt_passeio" min="2018-01-01" max="2018-12-31" required>
                 </div>
 
                 <div class="col-md-3">
                     <label for="hora_inicio">Hora Inicio</label>
-                    <input type="time" class="form-control" name="hora_inicio" id="hora_inicio">
+                    <input type="time" class="form-control" name="hora_inicio" id="hora_inicio" required>
                 </div>
 
                 <div class="col-md-3">
                     <label for="hora_fim">Hora Fim</label>
-                    <input type="time" class="form-control" name="hora_fim" id="hora_fim">
+                    <input type="time" class="form-control" name="hora_fim" id="hora_fim" required>
                 </div>
 
                 <div class="col-md-2">

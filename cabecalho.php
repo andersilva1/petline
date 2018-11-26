@@ -18,7 +18,7 @@ $id = $_SESSION['id'];
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
 
         <script src="http://www.petline.com.br/js/valida_form.js?56"></script>
-
+        <script src="http://www.petline.com.br/js/check-letters-numbers.js?2"></script>
         <script src="http://www.petline.com.br/js/jquery.payment.js"></script>
 
         <!-- Latest compiled JavaScript -->

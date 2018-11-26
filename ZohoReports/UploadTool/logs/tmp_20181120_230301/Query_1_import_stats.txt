@@ -1,5 +1,0 @@
-
-Tue Nov 20 23:03:07 BRST 2018 :: Import process started for the query 1
-Tue Nov 20 23:03:08 BRST 2018 :: C:\petline\ZohoReports\UploadTool\temp\Query_1_20181120_230302\file1.csv imported. 
-		 Total Row Count = 2 :: Success Row Count = 2  :: Warning Count = 0
-Tue Nov 20 23:03:08 BRST 2018 :: Import process completed.

@@ -1,6 +1,23 @@
 <?php
 include "cabecalho.php";
 ?>
+<script>
+function teste(e)
+	{
+		var expressao;
+
+		expressao = /[0-9]/;
+
+		if(expressao.test(String.fromCharCode(e.keyCode)))
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
+</script>
 <div id="conteudo">
 <div class="container">
     <div class="col-md-12">
@@ -11,7 +28,7 @@ include "cabecalho.php";
             <div class="form-row">
                 <div class="col-md-12">
                     <label for="nome_pet">Nome</label>
-                    <input type="text" class="form-control" name="nome_pet" maxlength="50" id="nome_pet">
+                    <input type="text" class="form-control" name="nome_pet" maxlength="255" id="nome_pet" onKeypress="return teste(event);">
                 </div>
 
                 <div class="clearfix"></div>

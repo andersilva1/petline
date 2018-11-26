@@ -1,7 +1,22 @@
 
-2018/11/15 21:00:19 BRST:
+2018/11/25 20:26:59 BRST:
+
+Server Exception :: AuthToken is not valid for Reports service
+2018/11/25 20:26:59 BRST:
+If you require assistance to resolve the problem, please send a mail to 'support@zohoreports.com' by attaching the files 'conf/common_params.conf', and the logs folder as zip.
+
+2018/11/25 20:26:59 BRST:
+ServerException (HttpStatusCode 400 Error Code: 8531 , URI: , Action: GETRELATEDTABLES, Message: AuthToken is not valid for Reports service)
+	at com.adventnet.zoho.client.report.BaseClient.sendRequest(BaseClient.java:144)
+	at com.adventnet.zoho.client.report.ReportClient.sendRequest(ReportClient.java:1869)
+	at com.adventnet.zoho.client.report.ReportClient.getRelatedTablesList(ReportClient.java:1121)
+	at com.adventnet.zoho.client.report.advancedtool.AdvancedUploader.generateRelatedTablesList(AdvancedUploader.java:829)
+	at com.adventnet.zoho.client.report.advancedtool.AdvancedUploader.startUpload(AdvancedUploader.java:360)
+	at com.adventnet.zoho.client.report.advancedtool.ZohoReportUploadDataFromDB.main(ZohoReportUploadDataFromDB.java:49)
+
+2018/11/25 20:28:29 BRST:
 Driver class is missing. Ensure the required jar file for the current database is placed in lib folder.
-2018/11/15 21:00:19 BRST:
+2018/11/25 20:28:29 BRST:
 java.lang.ClassNotFoundException: org.gjt.mm.mysql.Driver
 	at java.net.URLClassLoader$1.run(Unknown Source)
 	at java.security.AccessController.doPrivileged(Native Method)
@@ -15,7 +30,7 @@ java.lang.ClassNotFoundException: org.gjt.mm.mysql.Driver
 	at com.adventnet.zoho.client.report.advancedtool.AdvancedUploader.startUpload(AdvancedUploader.java:424)
 	at com.adventnet.zoho.client.report.advancedtool.ZohoReportUploadDataFromDB.main(ZohoReportUploadDataFromDB.java:49)
 
-2018/11/15 21:04:14 BRST:
+2018/11/25 20:29:40 BRST:
 
 Error in executing your query. Please check the query information.
 
@@ -32,24 +47,14 @@ Skip top :: 0
 Batch Size :: 10000
 BatchImport :: true
 Queue Size :: -1
-Query :: SELECT
-      CONCAT(U.nome,' ',U.sobrenome) as passeador,
-      CONCAT(U1.nome,' ',U1.sobrenome) as cliente,
-      P.nome as pacote,
-      MIN(P.dt_passeio) as data_contratacao,
-      fcRetornaValorPacote(U1.id) as valor_pacote
-    FROM servico S
-    INNER JOIN usuario U ON (S.id_passeador = U.id AND U.perfil = 'pas')
-    INNER JOIN usuario U1 ON (S.id_cliente = U1.id AND U1.perfil = 'cli')
-    INNER JOIN pacote P ON (P.id_usuario = U1.id)
-    GROUP BY P.id_usuario
+Query :: SELECT * FROM vw_pacote
 Collection Name :: null
 Field Names :: null
 Field Alias Mapping :: null
 --------------------------
 
-2018/11/15 21:04:14 BRST:
-java.sql.SQLException: Syntax error or access violation message from server: "FUNCTION fcRetornaValorPacote does not exist"
+2018/11/25 20:29:40 BRST:
+java.sql.SQLException: No database selected
 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2001)
 	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1168)
 	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1279)
@@ -60,7 +65,7 @@ java.sql.SQLException: Syntax error or access violation message from server: "FU
 	at com.adventnet.zoho.client.report.advancedtool.AdvancedUploader.startUpload(AdvancedUploader.java:459)
 	at com.adventnet.zoho.client.report.advancedtool.ZohoReportUploadDataFromDB.main(ZohoReportUploadDataFromDB.java:49)
 
-2018/11/15 21:04:14 BRST:
+2018/11/25 20:29:40 BRST:
 
 Error in executing your query. Please check the query information.
 
@@ -77,27 +82,13 @@ Skip top :: 0
 Batch Size :: 10000
 BatchImport :: true
 Queue Size :: -1
-Query :: SELECT DISTINCT
-      CONCAT(U.nome,' ',U.sobrenome) as passeador,
-      CONCAT(U1.nome,' ',U1.sobrenome) as cliente,
-      P.dt_passeio,
-      P.hora_inicio,
-      P.hora_fim,
-      PE.nome as nome_pet,
-      P.nome as pacote
-    FROM servico S
-    INNER JOIN usuario U ON (S.id_passeador = U.id AND U.perfil = 'pas')
-    INNER JOIN usuario U1 ON (S.id_cliente = U1.id AND U1.perfil = 'cli')
-    INNER JOIN pacote P ON (P.id_usuario = U1.id)
-    INNER JOIN pet PE ON (PE.id = S.id_pet)
-    WHERE
-      DATE_FORMAT(P.dt_passeio,'%Y-%m') = DATE_FORMAT(NOW(),'%Y-%m')
+Query :: SELECT * FROM vw_servico
 Collection Name :: null
 Field Names :: null
 Field Alias Mapping :: null
 --------------------------
 
-2018/11/15 21:04:14 BRST:
+2018/11/25 20:29:40 BRST:
 java.sql.SQLException: No database selected
 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2001)
 	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1168)

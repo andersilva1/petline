@@ -27,17 +27,17 @@ if (isset($_GET['add'])) {
             <div class="form-row">
                 <div class="col-md-2">
                     <label for="dt_passeio">Data Agenda</label>
-                    <input type="date" class="form-control" name="dt_passeio" id="dt_passeio">
+                    <input type="date" class="form-control" name="dt_passeio" id="dt_passeio" min="2018-01-01" max="2018-12-31" required>
                 </div>
 
                 <div class="col-md-2">
                     <label for="hora_inicio">Hora Inicio</label>
-                    <input type="time" class="form-control" name="hora_inicio" id="hora_inicio">
+                    <input type="time" class="form-control" name="hora_inicio" id="hora_inicio" required>
                 </div>
 
                 <div class="col-md-2">
                     <label for="hora_fim">Hora Fim</label>
-                    <input type="time" class="form-control" name="hora_fim" id="hora_fim">
+                    <input type="time" class="form-control" name="hora_fim" id="hora_fim" required>
                 </div>
 
                 <div class="col-md-5">
@@ -65,9 +65,9 @@ $num_pagina = ceil($contadorConsultaDias/$quantidade_pg);
 $incio = ($quantidade_pg*$pagina)-$quantidade_pg;
 
 if ($id == 1) {
-    $sqlConsultaDia = "SELECT id, dt_passeio, hora_inicio, hora_fim, descricao FROM agenda LIMIT $incio, $quantidade_pg";
+    $sqlConsultaDia = "SELECT id, dt_passeio, hora_inicio, hora_fim, descricao FROM agenda ORDER BY dt_passeio LIMIT $incio, $quantidade_pg";
 }else{
-    $sqlConsultaDia = "SELECT id, dt_passeio, hora_inicio, hora_fim, descricao FROM agenda WHERE id_usuario = $id LIMIT $incio, $quantidade_pg";
+    $sqlConsultaDia = "SELECT id, dt_passeio, hora_inicio, hora_fim, descricao FROM agenda WHERE id_usuario = $id ORDER BY dt_passeio LIMIT $incio, $quantidade_pg";
 }
     $resultadoConsultaDia = mysqli_query($conn,$sqlConsultaDia);
     $contadorConsultaDia = mysqli_num_rows($resultadoConsultaDia);

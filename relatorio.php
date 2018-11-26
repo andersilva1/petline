@@ -13,7 +13,7 @@ if ($perfil == 'pas') {
         <div class='page-header'>
             <h2>Controle Geral</h2>
         </div>
-        <iframe frameborder=0 width='100%' height='300' src='https://analytics.zoho.com/open-view/1850091000000139805/e5022a4985e27a020a2a6911f3be8a5c'></iframe>
+        <iframe frameborder=0 width='100%' height='300' src='https://analytics.zoho.com/open-view/1853753000000003148/1a4d6b15bbc87f180739a268623aebf8'></iframe>
     </div>
     </div>";
 }else if ($perfil == 'adm') {
@@ -23,9 +23,9 @@ if ($perfil == 'pas') {
         <div class='page-header'>
             <h2>Controle Geral</h2>
         </div>
-        <iframe frameborder=0 width='100%' height='800' src='https://analytics.zoho.com/open-view/1850091000000139302/660b5ec17a1ac5a5e594d629946ee573'></iframe>
+        <iframe frameborder=0 width='100%' height='600' src='https://analytics.zoho.com/open-view/1853753000000003684/390a1ffc751988058dcb3975c5eb043c'></iframe>
         <br></br>
-        <iframe frameborder=0 width='100%' height='800' src='https://analytics.zoho.com/open-view/1850091000000022208/09cb261cb4aa8b54a09e38a6270ca12a'></iframe>
+        <iframe frameborder=0 width='100%' height='600' src='https://analytics.zoho.com/open-view/1853753000000003554/a72ecb6236d5f5a6ddf309c595599589'></iframe>
     </div>
     </div>";
 }

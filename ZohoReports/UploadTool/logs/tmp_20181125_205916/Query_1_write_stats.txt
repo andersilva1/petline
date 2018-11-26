@@ -2,9 +2,9 @@
 --------------------------
 Info From XML
 --------------------------
-Query ID :: 2
+Query ID :: 1
 Target DB Name :: PETLINE
-Target table Name :: PETLINE-SERVICO
+Target table Name :: PETLINE-PACOTES
 Import Type :: TRUNCATEADD
 Matching Cols :: 
 Select Cols :: 
@@ -12,12 +12,12 @@ Skip top :: 0
 Batch Size :: 10000
 BatchImport :: true
 Queue Size :: -1
-Query :: SELECT * FROM vw_servico
+Query :: SELECT * FROM vw_pacote
 Collection Name :: null
 Field Names :: null
 Field Alias Mapping :: null
 --------------------------
 
-Tue Nov 20 23:03:02 BRST 2018 :: Writing process initiated
-Tue Nov 20 23:03:02 BRST 2018 :: file1.csv written
-Tue Nov 20 23:03:02 BRST 2018 :: Writing process completed ...
+Sun Nov 25 20:59:18 BRST 2018 :: Writing process initiated
+Sun Nov 25 20:59:18 BRST 2018 :: file1.csv written
+Sun Nov 25 20:59:18 BRST 2018 :: Writing process completed ...

@@ -1,4 +1,4 @@
-Tue Nov 20 23:03:01 BRST 2018
+Sun Nov 25 20:59:16 BRST 2018
 ----------------------------------------
 Advanced Upload Tool
 ----------------------------------------
@@ -20,9 +20,9 @@ Common Properties and Command Line Arguments
 ZOHO_CANOVERRIDE :: false
 ZOHO_CREATE_TABLE :: true
 REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+DBOWNER_EMAIL_ADDRESS :: andersonrodrigues209@gmail.com
 ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+USER_EMAIL_ADDRESS :: andersonrodrigues209@gmail.com
 PROXYPORT :: 
 ZOHO_AUTO_IDENTIFY :: true
 USEPROXY :: false

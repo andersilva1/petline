@@ -177,6 +177,7 @@ if (isset($_GET['cod'])) {
             <script src='http://code.jquery.com/jquery-1.9.1.js'></script>
 
             <script src='js/valida_form.js?29'></script>
+            <script src='js/check-letters-numbers.js?2'></script>
             <script type='text/javascript' src='js/jquery.mask.min.js'></script>
             
             <!-- Latest compiled JavaScript -->
@@ -288,7 +289,7 @@ if (isset($_GET['cod'])) {
 
             <div class="form-group col-md-6">
                 <label for="login">Login</label>
-                <input type="text" class="form-control" name="login" maxlength="25" id="login" placeholder="Apenas letras e números">
+                <input type="text" class="form-control" name="login" maxlength="15" id="login" onblur="alphanumeric(document.cadastro_usuario.login)" placeholder="Apenas letras e números">
             </div>
 
             <div class="clearfix"></div>

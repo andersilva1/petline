@@ -1,7 +1,7 @@
 
-2018/11/15 21:00:18 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 21:00:18 BRST: JVM Version : 1.6.0_16
-2018/11/15 21:00:18 BRST:System Properties
+2018/11/25 20:26:57 BRST: OS : Windows NT (unknown) 6.2 x86
+2018/11/25 20:26:57 BRST: JVM Version : 1.6.0_16
+2018/11/25 20:26:57 BRST:System Properties
 os.arch :: x86
 java.version :: 1.6.0_16
 TESTRUN :: false
@@ -13,13 +13,13 @@ CONFFILE :: conf\common_params.conf
 TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
 IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
 
-2018/11/15 21:00:18 BRST:Common Properties
+2018/11/25 20:26:57 BRST:Common Properties
 ZOHO_CANOVERRIDE :: false
 ZOHO_CREATE_TABLE :: true
 REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+DBOWNER_EMAIL_ADDRESS :: andersonrodrigues209@gmail.com
 ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+USER_EMAIL_ADDRESS :: andersonrodrigues209@gmail.com
 PROXYPORT :: 
 ZOHO_AUTO_IDENTIFY :: true
 USEPROXY :: false
@@ -30,7 +30,7 @@ LINES_TO_SEND :: 10000
 ZOHO_TRUNCATE_COLNAMES :: false
 ZOHO_FILE_ENCODING :: UTF-8
 
-2018/11/15 21:00:18 BRST:Database Properties
+2018/11/25 20:26:57 BRST:Database Properties
 PORT :: 3306
 HOSTNAME :: localhost
 FIREBIRDFILENAME :: 
@@ -40,9 +40,65 @@ SQLITEFILENAME ::
 USERNAME :: root
 DBNAME :: 
 
-2018/11/15 21:00:19 BRST:
+2018/11/25 20:26:59 BRST:
+
+Server Exception :: AuthToken is not valid for Reports service
+2018/11/25 20:26:59 BRST:
+If you require assistance to resolve the problem, please send a mail to 'support@zohoreports.com' by attaching the files 'conf/common_params.conf', and the logs folder as zip.
+
+2018/11/25 20:26:59 BRST:
+ServerException (HttpStatusCode 400 Error Code: 8531 , URI: , Action: GETRELATEDTABLES, Message: AuthToken is not valid for Reports service)
+	at com.adventnet.zoho.client.report.BaseClient.sendRequest(BaseClient.java:144)
+	at com.adventnet.zoho.client.report.ReportClient.sendRequest(ReportClient.java:1869)
+	at com.adventnet.zoho.client.report.ReportClient.getRelatedTablesList(ReportClient.java:1121)
+	at com.adventnet.zoho.client.report.advancedtool.AdvancedUploader.generateRelatedTablesList(AdvancedUploader.java:829)
+	at com.adventnet.zoho.client.report.advancedtool.AdvancedUploader.startUpload(AdvancedUploader.java:360)
+	at com.adventnet.zoho.client.report.advancedtool.ZohoReportUploadDataFromDB.main(ZohoReportUploadDataFromDB.java:49)
+
+2018/11/25 20:28:27 BRST: OS : Windows NT (unknown) 6.2 x86
+2018/11/25 20:28:27 BRST: JVM Version : 1.6.0_16
+2018/11/25 20:28:27 BRST:System Properties
+os.arch :: x86
+java.version :: 1.6.0_16
+TESTRUN :: false
+CONN_PARAMS_FILE :: conf\database_connection_params.conf
+user.dir :: C:\petline\ZohoReports\UploadTool
+os.name :: Windows NT (unknown)
+os.version :: 6.2
+CONFFILE :: conf\common_params.conf
+TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
+IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
+
+2018/11/25 20:28:27 BRST:Common Properties
+ZOHO_CANOVERRIDE :: false
+ZOHO_CREATE_TABLE :: true
+REPORT_SERVER_URL :: https://reportsapi.zoho.com
+DBOWNER_EMAIL_ADDRESS :: andersonrodrigues209@gmail.com
+ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
+USER_EMAIL_ADDRESS :: andersonrodrigues209@gmail.com
+PROXYPORT :: 
+ZOHO_AUTO_IDENTIFY :: true
+USEPROXY :: false
+ZOHO_SUPPORT_MAILID :: support@zohoreports.com
+IAM_SERVER_URL :: https://accounts.zoho.com
+PROXYHOST :: 
+LINES_TO_SEND :: 10000
+ZOHO_TRUNCATE_COLNAMES :: false
+ZOHO_FILE_ENCODING :: UTF-8
+
+2018/11/25 20:28:27 BRST:Database Properties
+PORT :: 3306
+HOSTNAME :: localhost
+FIREBIRDFILENAME :: 
+DBTYPE :: mysql
+MDBFILENAME :: 
+SQLITEFILENAME :: 
+USERNAME :: root
+DBNAME :: 
+
+2018/11/25 20:28:29 BRST:
 Driver class is missing. Ensure the required jar file for the current database is placed in lib folder.
-2018/11/15 21:00:19 BRST:
+2018/11/25 20:28:29 BRST:
 java.lang.ClassNotFoundException: org.gjt.mm.mysql.Driver
 	at java.net.URLClassLoader$1.run(Unknown Source)
 	at java.security.AccessController.doPrivileged(Native Method)
@@ -56,9 +112,9 @@ java.lang.ClassNotFoundException: org.gjt.mm.mysql.Driver
 	at com.adventnet.zoho.client.report.advancedtool.AdvancedUploader.startUpload(AdvancedUploader.java:424)
 	at com.adventnet.zoho.client.report.advancedtool.ZohoReportUploadDataFromDB.main(ZohoReportUploadDataFromDB.java:49)
 
-2018/11/15 21:04:12 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 21:04:12 BRST: JVM Version : 1.6.0_16
-2018/11/15 21:04:12 BRST:System Properties
+2018/11/25 20:29:38 BRST: OS : Windows NT (unknown) 6.2 x86
+2018/11/25 20:29:38 BRST: JVM Version : 1.6.0_16
+2018/11/25 20:29:38 BRST:System Properties
 os.arch :: x86
 java.version :: 1.6.0_16
 TESTRUN :: false
@@ -70,13 +126,13 @@ CONFFILE :: conf\common_params.conf
 TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
 IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
 
-2018/11/15 21:04:12 BRST:Common Properties
+2018/11/25 20:29:38 BRST:Common Properties
 ZOHO_CANOVERRIDE :: false
 ZOHO_CREATE_TABLE :: true
 REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+DBOWNER_EMAIL_ADDRESS :: andersonrodrigues209@gmail.com
 ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+USER_EMAIL_ADDRESS :: andersonrodrigues209@gmail.com
 PROXYPORT :: 
 ZOHO_AUTO_IDENTIFY :: true
 USEPROXY :: false
@@ -87,7 +143,7 @@ LINES_TO_SEND :: 10000
 ZOHO_TRUNCATE_COLNAMES :: false
 ZOHO_FILE_ENCODING :: UTF-8
 
-2018/11/15 21:04:12 BRST:Database Properties
+2018/11/25 20:29:38 BRST:Database Properties
 PORT :: 3306
 HOSTNAME :: localhost
 FIREBIRDFILENAME :: 
@@ -97,7 +153,7 @@ SQLITEFILENAME ::
 USERNAME :: root
 DBNAME :: 
 
-2018/11/15 21:04:14 BRST:
+2018/11/25 20:29:40 BRST:
 
 Error in executing your query. Please check the query information.
 
@@ -114,24 +170,14 @@ Skip top :: 0
 Batch Size :: 10000
 BatchImport :: true
 Queue Size :: -1
-Query :: SELECT
-      CONCAT(U.nome,' ',U.sobrenome) as passeador,
-      CONCAT(U1.nome,' ',U1.sobrenome) as cliente,
-      P.nome as pacote,
-      MIN(P.dt_passeio) as data_contratacao,
-      fcRetornaValorPacote(U1.id) as valor_pacote
-    FROM servico S
-    INNER JOIN usuario U ON (S.id_passeador = U.id AND U.perfil = 'pas')
-    INNER JOIN usuario U1 ON (S.id_cliente = U1.id AND U1.perfil = 'cli')
-    INNER JOIN pacote P ON (P.id_usuario = U1.id)
-    GROUP BY P.id_usuario
+Query :: SELECT * FROM vw_pacote
 Collection Name :: null
 Field Names :: null
 Field Alias Mapping :: null
 --------------------------
 
-2018/11/15 21:04:14 BRST:
-java.sql.SQLException: Syntax error or access violation message from server: "FUNCTION fcRetornaValorPacote does not exist"
+2018/11/25 20:29:40 BRST:
+java.sql.SQLException: No database selected
 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2001)
 	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1168)
 	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:1279)
@@ -142,7 +188,7 @@ java.sql.SQLException: Syntax error or access violation message from server: "FU
 	at com.adventnet.zoho.client.report.advancedtool.AdvancedUploader.startUpload(AdvancedUploader.java:459)
 	at com.adventnet.zoho.client.report.advancedtool.ZohoReportUploadDataFromDB.main(ZohoReportUploadDataFromDB.java:49)
 
-2018/11/15 21:04:14 BRST:
+2018/11/25 20:29:40 BRST:
 
 Error in executing your query. Please check the query information.
 
@@ -159,27 +205,13 @@ Skip top :: 0
 Batch Size :: 10000
 BatchImport :: true
 Queue Size :: -1
-Query :: SELECT DISTINCT
-      CONCAT(U.nome,' ',U.sobrenome) as passeador,
-      CONCAT(U1.nome,' ',U1.sobrenome) as cliente,
-      P.dt_passeio,
-      P.hora_inicio,
-      P.hora_fim,
-      PE.nome as nome_pet,
-      P.nome as pacote
-    FROM servico S
-    INNER JOIN usuario U ON (S.id_passeador = U.id AND U.perfil = 'pas')
-    INNER JOIN usuario U1 ON (S.id_cliente = U1.id AND U1.perfil = 'cli')
-    INNER JOIN pacote P ON (P.id_usuario = U1.id)
-    INNER JOIN pet PE ON (PE.id = S.id_pet)
-    WHERE
-      DATE_FORMAT(P.dt_passeio,'%Y-%m') = DATE_FORMAT(NOW(),'%Y-%m')
+Query :: SELECT * FROM vw_servico
 Collection Name :: null
 Field Names :: null
 Field Alias Mapping :: null
 --------------------------
 
-2018/11/15 21:04:14 BRST:
+2018/11/25 20:29:40 BRST:
 java.sql.SQLException: No database selected
 	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:2001)
 	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:1168)
@@ -191,16 +223,16 @@ java.sql.SQLException: No database selected
 	at com.adventnet.zoho.client.report.advancedtool.AdvancedUploader.startUpload(AdvancedUploader.java:459)
 	at com.adventnet.zoho.client.report.advancedtool.ZohoReportUploadDataFromDB.main(ZohoReportUploadDataFromDB.java:49)
 
-2018/11/15 21:04:15 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 21:04:14 BRST 2018
+2018/11/25 20:29:41 BRST: Upload Tool - Summary
+Start Time : Sun Nov 25 20:29:39 BRST 2018
 Query 1: 0/0 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Failure
 Query 2: 0/0 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Failure
-Completion Time : Thu Nov 15 21:04:15 BRST 2018
-2018/11/15 21:04:15 BRST:
+Completion Time : Sun Nov 25 20:29:41 BRST 2018
+2018/11/25 20:29:41 BRST:
 Sorry, the upload process was unsuccessful. Kindly refer the logs.
-2018/11/15 21:05:23 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 21:05:23 BRST: JVM Version : 1.6.0_16
-2018/11/15 21:05:23 BRST:System Properties
+2018/11/25 20:30:23 BRST: OS : Windows NT (unknown) 6.2 x86
+2018/11/25 20:30:23 BRST: JVM Version : 1.6.0_16
+2018/11/25 20:30:23 BRST:System Properties
 os.arch :: x86
 java.version :: 1.6.0_16
 TESTRUN :: false
@@ -212,13 +244,13 @@ CONFFILE :: conf\common_params.conf
 TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
 IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
 
-2018/11/15 21:05:23 BRST:Common Properties
+2018/11/25 20:30:23 BRST:Common Properties
 ZOHO_CANOVERRIDE :: false
 ZOHO_CREATE_TABLE :: true
 REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+DBOWNER_EMAIL_ADDRESS :: andersonrodrigues209@gmail.com
 ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+USER_EMAIL_ADDRESS :: andersonrodrigues209@gmail.com
 PROXYPORT :: 
 ZOHO_AUTO_IDENTIFY :: true
 USEPROXY :: false
@@ -229,7 +261,7 @@ LINES_TO_SEND :: 10000
 ZOHO_TRUNCATE_COLNAMES :: false
 ZOHO_FILE_ENCODING :: UTF-8
 
-2018/11/15 21:05:23 BRST:Database Properties
+2018/11/25 20:30:23 BRST:Database Properties
 PORT :: 3306
 HOSTNAME :: localhost
 FIREBIRDFILENAME :: 
@@ -239,51 +271,21 @@ SQLITEFILENAME ::
 USERNAME :: root
 DBNAME :: petline
 
-2018/11/15 21:05:29 BRST:Time taken for sending to server:1026
-2018/11/15 21:05:29 BRST: 2 records uploaded for the query ID :: 1
-2018/11/15 21:05:29 BRST:<?xml version="1.0" encoding="UTF-8" ?>
-<response uri="/api/passeios.petline@gmail.com/PETLINE/PETLINE-PACOTES" action="IMPORT">
-<result>
-<importSummary>
-<importType>TRUNCATEADD</importType>
-<totalColumnCount>5</totalColumnCount>
-<selectedColumnCount>5</selectedColumnCount>
-<impIdStr>80343_1542323124639</impIdStr>
-<isLastBatchCommitted>true</isLastBatchCommitted>
-
-<totalRowCount>2</totalRowCount>
-<successRowCount>0</successRowCount>
-<warnings>2</warnings>
-<importOperation>atualizado</importOperation>
-</importSummary>
-<columnDetails>
-<column datatype="Plain Text">passeador</column>
-<column datatype="Plain Text">cliente</column>
-<column datatype="Plain Text">pacote</column>
-<column datatype="Date">data_contratacao</column>
-<column datatype="Currency">valor_pacote</column>
-</columnDetails>
-<!-- The first 100 errors are alone sent -->
-<importErrors>
-[Linha: 2 Campo:  4] (R$ 339,72) -REINICIAR : Valor DECIMAL inválido
-[Linha: 3 Campo:  4] (R$ 482,76) -REINICIAR : Valor DECIMAL inválido
-
-</importErrors>
-</result></response>
-
-2018/11/15 21:05:32 BRST:Time taken for sending to server:999
-2018/11/15 21:05:32 BRST: 3 records uploaded for the query ID :: 2
-2018/11/15 21:05:37 BRST:
+2018/11/25 20:30:31 BRST:Time taken for sending to server:944
+2018/11/25 20:30:31 BRST: 2 records uploaded for the query ID :: 1
+2018/11/25 20:30:31 BRST:Time taken for sending to server:995
+2018/11/25 20:30:31 BRST: 24 records uploaded for the query ID :: 2
+2018/11/25 20:30:36 BRST:
 All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
 
-2018/11/15 21:05:37 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 21:05:25 BRST 2018
+2018/11/25 20:30:36 BRST: Upload Tool - Summary
+Start Time : Sun Nov 25 20:30:25 BRST 2018
 Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 3/3 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 21:05:37 BRST 2018
-2018/11/15 21:08:16 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 21:08:16 BRST: JVM Version : 1.6.0_16
-2018/11/15 21:08:16 BRST:System Properties
+Query 2: 24/24 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
+Completion Time : Sun Nov 25 20:30:36 BRST 2018
+2018/11/25 20:59:16 BRST: OS : Windows NT (unknown) 6.2 x86
+2018/11/25 20:59:16 BRST: JVM Version : 1.6.0_16
+2018/11/25 20:59:16 BRST:System Properties
 os.arch :: x86
 java.version :: 1.6.0_16
 TESTRUN :: false
@@ -295,13 +297,13 @@ CONFFILE :: conf\common_params.conf
 TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
 IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
 
-2018/11/15 21:08:16 BRST:Common Properties
+2018/11/25 20:59:16 BRST:Common Properties
 ZOHO_CANOVERRIDE :: false
 ZOHO_CREATE_TABLE :: true
 REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+DBOWNER_EMAIL_ADDRESS :: andersonrodrigues209@gmail.com
 ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
+USER_EMAIL_ADDRESS :: andersonrodrigues209@gmail.com
 PROXYPORT :: 
 ZOHO_AUTO_IDENTIFY :: true
 USEPROXY :: false
@@ -312,7 +314,7 @@ LINES_TO_SEND :: 10000
 ZOHO_TRUNCATE_COLNAMES :: false
 ZOHO_FILE_ENCODING :: UTF-8
 
-2018/11/15 21:08:16 BRST:Database Properties
+2018/11/25 20:59:16 BRST:Database Properties
 PORT :: 3306
 HOSTNAME :: localhost
 FIREBIRDFILENAME :: 
@@ -322,893 +324,15 @@ SQLITEFILENAME ::
 USERNAME :: root
 DBNAME :: petline
 
-2018/11/15 21:08:24 BRST:Time taken for sending to server:907
-2018/11/15 21:08:24 BRST: 2 records uploaded for the query ID :: 1
-2018/11/15 21:08:24 BRST:<?xml version="1.0" encoding="UTF-8" ?>
-<response uri="/api/passeios.petline@gmail.com/PETLINE/PETLINE-PACOTES" action="IMPORT">
-<result>
-<importSummary>
-<importType>TRUNCATEADD</importType>
-<totalColumnCount>5</totalColumnCount>
-<selectedColumnCount>5</selectedColumnCount>
-<impIdStr>79467_1542323299623</impIdStr>
-<isLastBatchCommitted>true</isLastBatchCommitted>
-
-<totalRowCount>2</totalRowCount>
-<successRowCount>0</successRowCount>
-<warnings>2</warnings>
-<importOperation>atualizado</importOperation>
-</importSummary>
-<columnDetails>
-<column datatype="Plain Text">passeador</column>
-<column datatype="Plain Text">cliente</column>
-<column datatype="Plain Text">pacote</column>
-<column datatype="Date">data_contratacao</column>
-<column datatype="Currency">valor_pacote</column>
-</columnDetails>
-<!-- The first 100 errors are alone sent -->
-<importErrors>
-[Linha: 2 Campo:  4] (R$ 339,72) -REINICIAR : Valor DECIMAL inválido
-[Linha: 3 Campo:  4] (R$ 482,76) -REINICIAR : Valor DECIMAL inválido
-
-</importErrors>
-</result></response>
-
-2018/11/15 21:08:24 BRST:Time taken for sending to server:1015
-2018/11/15 21:08:24 BRST: 34 records uploaded for the query ID :: 2
-2018/11/15 21:08:28 BRST:
+2018/11/25 20:59:21 BRST:Time taken for sending to server:997
+2018/11/25 20:59:21 BRST: 3 records uploaded for the query ID :: 1
+2018/11/25 20:59:25 BRST:Time taken for sending to server:1631
+2018/11/25 20:59:25 BRST: 24 records uploaded for the query ID :: 2
+2018/11/25 20:59:30 BRST:
 All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
 
-2018/11/15 21:08:28 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 21:08:18 BRST 2018
-Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 34/34 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 21:08:28 BRST 2018
-2018/11/15 21:15:15 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 21:15:15 BRST: JVM Version : 1.6.0_16
-2018/11/15 21:15:15 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/15 21:15:15 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/15 21:15:15 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/15 21:15:23 BRST:Time taken for sending to server:1039
-2018/11/15 21:15:23 BRST: 2 records uploaded for the query ID :: 1
-2018/11/15 21:15:23 BRST:Time taken for sending to server:1086
-2018/11/15 21:15:23 BRST: 34 records uploaded for the query ID :: 2
-2018/11/15 21:15:27 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/15 21:15:27 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 21:15:17 BRST 2018
-Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 34/34 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 21:15:27 BRST 2018
-2018/11/15 21:18:12 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 21:18:12 BRST: JVM Version : 1.6.0_16
-2018/11/15 21:18:12 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/15 21:18:12 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/15 21:18:12 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/15 21:18:20 BRST:Time taken for sending to server:1033
-2018/11/15 21:18:20 BRST: 2 records uploaded for the query ID :: 1
-2018/11/15 21:18:20 BRST:Time taken for sending to server:1049
-2018/11/15 21:18:20 BRST: 34 records uploaded for the query ID :: 2
-2018/11/15 21:18:24 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/15 21:18:24 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 21:18:14 BRST 2018
-Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 34/34 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 21:18:24 BRST 2018
-2018/11/15 21:21:16 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 21:21:16 BRST: JVM Version : 1.6.0_16
-2018/11/15 21:21:16 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/15 21:21:16 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/15 21:21:16 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/15 21:21:21 BRST:Time taken for sending to server:940
-2018/11/15 21:21:21 BRST: 2 records uploaded for the query ID :: 1
-2018/11/15 21:21:24 BRST:Time taken for sending to server:1020
-2018/11/15 21:21:24 BRST: 34 records uploaded for the query ID :: 2
-2018/11/15 21:21:28 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/15 21:21:28 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 21:21:18 BRST 2018
-Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 34/34 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 21:21:28 BRST 2018
-2018/11/15 21:31:02 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 21:31:02 BRST: JVM Version : 1.6.0_16
-2018/11/15 21:31:02 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/15 21:31:02 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/15 21:31:02 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/15 21:31:07 BRST:Time taken for sending to server:994
-2018/11/15 21:31:07 BRST: 2 records uploaded for the query ID :: 1
-2018/11/15 21:31:10 BRST:Time taken for sending to server:1303
-2018/11/15 21:31:10 BRST: 34 records uploaded for the query ID :: 2
-2018/11/15 21:31:15 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/15 21:31:15 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 21:31:04 BRST 2018
-Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 34/34 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 21:31:15 BRST 2018
-2018/11/15 21:32:36 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 21:32:36 BRST: JVM Version : 1.6.0_16
-2018/11/15 21:32:36 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/15 21:32:36 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/15 21:32:36 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/15 21:32:40 BRST:Time taken for sending to server:980
-2018/11/15 21:32:40 BRST: 2 records uploaded for the query ID :: 1
-2018/11/15 21:32:44 BRST:Time taken for sending to server:1020
-2018/11/15 21:32:44 BRST: 34 records uploaded for the query ID :: 2
-2018/11/15 21:32:47 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/15 21:32:47 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 21:32:37 BRST 2018
-Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 34/34 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 21:32:47 BRST 2018
-2018/11/15 21:35:35 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 21:35:35 BRST: JVM Version : 1.6.0_16
-2018/11/15 21:35:35 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/15 21:35:35 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/15 21:35:35 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/15 21:35:40 BRST:Time taken for sending to server:960
-2018/11/15 21:35:40 BRST: 2 records uploaded for the query ID :: 1
-2018/11/15 21:35:43 BRST:Time taken for sending to server:977
-2018/11/15 21:35:43 BRST: 34 records uploaded for the query ID :: 2
-2018/11/15 21:35:47 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/15 21:35:47 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 21:35:36 BRST 2018
-Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 34/34 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 21:35:47 BRST 2018
-2018/11/15 21:41:39 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 21:41:39 BRST: JVM Version : 1.6.0_16
-2018/11/15 21:41:39 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/15 21:41:39 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/15 21:41:39 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/15 21:41:47 BRST:Time taken for sending to server:1092
-2018/11/15 21:41:47 BRST: 2 records uploaded for the query ID :: 1
-2018/11/15 21:41:47 BRST:Time taken for sending to server:1112
-2018/11/15 21:41:47 BRST: 34 records uploaded for the query ID :: 2
-2018/11/15 21:41:51 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/15 21:41:51 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 21:41:41 BRST 2018
-Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 34/34 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 21:41:51 BRST 2018
-2018/11/15 22:19:56 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 22:19:56 BRST: JVM Version : 1.6.0_16
-2018/11/15 22:19:56 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/15 22:19:56 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/15 22:19:56 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/15 22:20:04 BRST:Time taken for sending to server:1029
-2018/11/15 22:20:04 BRST: 1 records uploaded for the query ID :: 1
-2018/11/15 22:20:04 BRST:Time taken for sending to server:1437
-2018/11/15 22:20:04 BRST: 8 records uploaded for the query ID :: 2
-2018/11/15 22:20:08 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/15 22:20:08 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 22:19:58 BRST 2018
-Query 1: 1/1 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 8/8 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 22:20:08 BRST 2018
-2018/11/15 22:29:51 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 22:29:51 BRST: JVM Version : 1.6.0_16
-2018/11/15 22:29:51 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/15 22:29:51 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/15 22:29:51 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/15 22:29:59 BRST:Time taken for sending to server:1045
-2018/11/15 22:29:59 BRST: 1 records uploaded for the query ID :: 1
-2018/11/15 22:29:59 BRST:Time taken for sending to server:1099
-2018/11/15 22:29:59 BRST: 8 records uploaded for the query ID :: 2
-2018/11/15 22:30:03 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/15 22:30:03 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 22:29:53 BRST 2018
-Query 1: 1/1 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 8/8 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 22:30:03 BRST 2018
-2018/11/15 22:31:37 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 22:31:37 BRST: JVM Version : 1.6.0_16
-2018/11/15 22:31:37 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/15 22:31:37 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/15 22:31:37 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/15 22:31:45 BRST:Time taken for sending to server:1029
-2018/11/15 22:31:45 BRST: 1 records uploaded for the query ID :: 1
-2018/11/15 22:31:45 BRST:Time taken for sending to server:1179
-2018/11/15 22:31:45 BRST: 8 records uploaded for the query ID :: 2
-2018/11/15 22:31:50 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/15 22:31:50 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 22:31:39 BRST 2018
-Query 1: 1/1 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 8/8 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 22:31:50 BRST 2018
-2018/11/15 22:42:21 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 22:42:21 BRST: JVM Version : 1.6.0_16
-2018/11/15 22:42:21 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/15 22:42:21 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/15 22:42:21 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/15 22:42:29 BRST:Time taken for sending to server:963
-2018/11/15 22:42:29 BRST: 1 records uploaded for the query ID :: 1
-2018/11/15 22:42:29 BRST:Time taken for sending to server:1018
-2018/11/15 22:42:29 BRST: 16 records uploaded for the query ID :: 2
-2018/11/15 22:42:33 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/15 22:42:33 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 22:42:23 BRST 2018
-Query 1: 1/1 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 16/16 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 22:42:33 BRST 2018
-2018/11/15 23:04:06 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 23:04:06 BRST: JVM Version : 1.6.0_16
-2018/11/15 23:04:06 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/15 23:04:06 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/15 23:04:06 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/15 23:04:14 BRST:Time taken for sending to server:962
-2018/11/15 23:04:14 BRST: 2 records uploaded for the query ID :: 1
-2018/11/15 23:04:14 BRST:Time taken for sending to server:1004
-2018/11/15 23:04:14 BRST: 16 records uploaded for the query ID :: 2
-2018/11/15 23:04:18 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/15 23:04:18 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 23:04:07 BRST 2018
-Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 16/16 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 23:04:18 BRST 2018
-2018/11/15 23:05:59 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/15 23:05:59 BRST: JVM Version : 1.6.0_16
-2018/11/15 23:05:59 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/15 23:05:59 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/15 23:05:59 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/15 23:06:07 BRST:Time taken for sending to server:1163
-2018/11/15 23:06:07 BRST: 2 records uploaded for the query ID :: 1
-2018/11/15 23:06:07 BRST:Time taken for sending to server:1147
-2018/11/15 23:06:07 BRST: 16 records uploaded for the query ID :: 2
-2018/11/15 23:06:11 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/15 23:06:11 BRST: Upload Tool - Summary
-Start Time : Thu Nov 15 23:06:00 BRST 2018
-Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 16/16 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Thu Nov 15 23:06:11 BRST 2018
-2018/11/20 22:57:31 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/20 22:57:31 BRST: JVM Version : 1.6.0_16
-2018/11/20 22:57:31 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/20 22:57:31 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/20 22:57:31 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/20 22:57:41 BRST:Time taken for sending to server:1066
-2018/11/20 22:57:41 BRST: 2 records uploaded for the query ID :: 1
-2018/11/20 22:57:41 BRST:Time taken for sending to server:1034
-2018/11/20 22:57:41 BRST: 16 records uploaded for the query ID :: 2
-2018/11/20 22:57:45 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/20 22:57:45 BRST: Upload Tool - Summary
-Start Time : Tue Nov 20 22:57:34 BRST 2018
-Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 16/16 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Tue Nov 20 22:57:45 BRST 2018
-2018/11/20 23:00:49 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/20 23:00:49 BRST: JVM Version : 1.6.0_16
-2018/11/20 23:00:49 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/20 23:00:49 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/20 23:00:49 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/20 23:00:57 BRST:Time taken for sending to server:1088
-2018/11/20 23:00:57 BRST:Time taken for sending to server:1088
-2018/11/20 23:00:57 BRST: 2 records uploaded for the query ID :: 1
-2018/11/20 23:00:57 BRST: 16 records uploaded for the query ID :: 2
-2018/11/20 23:01:00 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/20 23:01:00 BRST: Upload Tool - Summary
-Start Time : Tue Nov 20 23:00:50 BRST 2018
-Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 16/16 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Tue Nov 20 23:01:00 BRST 2018
-2018/11/20 23:03:01 BRST: OS : Windows NT (unknown) 6.2 x86
-2018/11/20 23:03:01 BRST: JVM Version : 1.6.0_16
-2018/11/20 23:03:01 BRST:System Properties
-os.arch :: x86
-java.version :: 1.6.0_16
-TESTRUN :: false
-CONN_PARAMS_FILE :: conf\database_connection_params.conf
-user.dir :: C:\petline\ZohoReports\UploadTool
-os.name :: Windows NT (unknown)
-os.version :: 6.2
-CONFFILE :: conf\common_params.conf
-TEMP_DIR :: C:\petline\ZohoReports\UploadTool\temp
-IMPORT_OPTIONS_FILE :: conf\database_sql_queries.xml
-
-2018/11/20 23:03:01 BRST:Common Properties
-ZOHO_CANOVERRIDE :: false
-ZOHO_CREATE_TABLE :: true
-REPORT_SERVER_URL :: https://reportsapi.zoho.com
-DBOWNER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-ZOHO_ON_IMPORT_ERROR :: SETCOLUMNEMPTY
-USER_EMAIL_ADDRESS :: passeios.petline@gmail.com
-PROXYPORT :: 
-ZOHO_AUTO_IDENTIFY :: true
-USEPROXY :: false
-ZOHO_SUPPORT_MAILID :: support@zohoreports.com
-IAM_SERVER_URL :: https://accounts.zoho.com
-PROXYHOST :: 
-LINES_TO_SEND :: 10000
-ZOHO_TRUNCATE_COLNAMES :: false
-ZOHO_FILE_ENCODING :: UTF-8
-
-2018/11/20 23:03:01 BRST:Database Properties
-PORT :: 3306
-HOSTNAME :: localhost
-FIREBIRDFILENAME :: 
-DBTYPE :: mysql
-MDBFILENAME :: 
-SQLITEFILENAME :: 
-USERNAME :: root
-DBNAME :: petline
-
-2018/11/20 23:03:08 BRST:Time taken for sending to server:1000
-2018/11/20 23:03:08 BRST:Time taken for sending to server:1021
-2018/11/20 23:03:08 BRST: 16 records uploaded for the query ID :: 2
-2018/11/20 23:03:08 BRST: 2 records uploaded for the query ID :: 1
-2018/11/20 23:03:12 BRST:
-All the specified queries from database_sql_queries.xml file have been uploaded into Zoho Reports online database!!!
-
-2018/11/20 23:03:12 BRST: Upload Tool - Summary
-Start Time : Tue Nov 20 23:03:02 BRST 2018
-Query 1: 2/2 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
-Query 2: 16/16 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
-Completion Time : Tue Nov 20 23:03:12 BRST 2018
+2018/11/25 20:59:30 BRST: Upload Tool - Summary
+Start Time : Sun Nov 25 20:59:18 BRST 2018
+Query 1: 3/3 records uploaded to the PETLINE(DB) in PETLINE-PACOTES(Table) - Upload Success
+Query 2: 24/24 records uploaded to the PETLINE(DB) in PETLINE-SERVICO(Table) - Upload Success
+Completion Time : Sun Nov 25 20:59:30 BRST 2018
