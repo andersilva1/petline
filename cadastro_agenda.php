@@ -72,6 +72,8 @@ if ($id == 1) {
     $resultadoConsultaDia = mysqli_query($conn,$sqlConsultaDia);
     $contadorConsultaDia = mysqli_num_rows($resultadoConsultaDia);
 ?>
+<br></br>
+<hr>
                 <div class="table-responsive panel panel-default col-md-12">
                 <table width=100% class="table table-striped">
                     <thead>

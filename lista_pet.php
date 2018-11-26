@@ -13,6 +13,8 @@ $sqlConsultaPet = "SELECT id, nome, raca, peso, descricao FROM pet WHERE id_usua
 $resultadoConsultaPet = mysqli_query($conn,$sqlConsultaPet);
 $contadorConsultaPet = mysqli_num_rows($resultadoConsultaPet);
 ?>
+<img src="../img/pagContrataPac.jpg" alt="Imagem titulo pagina de contratar pacotes" style="width:100%;">
+<br></br>
 <div id="conteudo">
 <div class="container">
     <div class="col-md-12">

@@ -179,7 +179,7 @@
         </div>
     <!-- FIM Seção do accordion -->
     <div align="center">
-        <h2>Se interessou por algum destes pacotes de passeios, cadastre em nosso site e adquira o seu!</h2>        
+        <h2>Se interessou por algum destes pacotes de passeios, cadastre-se em nosso site e adquira o seu!</h2>        
         <a href="cadastro_usuario.php?cod"><button type="button" class="btn btn-primary btn-block"> Cadastre-se</button></a>
     </div>
 </section>
@@ -189,16 +189,12 @@
         <div>
             <h1 align="center">Parceiros</h1>
         </div><br>
-        <div class="flex-container">
-            <div>
-                <img src="img/unieuro2.png" alt="">
-            </div><br>
-            <div>
-                <img src="img/unieuro2.png" alt="">
-            </div><br>
-            <div>
-                <img src="img/unieuro2.png" alt="">
-            </div><br>
+        <div class="flex-container">            
+                <img src="img/unieuro2.png" alt="Logo Unieuro">            
+            
+                <img src="img/unieuro2.png" alt="Logo Unieuro">            
+            
+                <img src="img/unieuro2.png" alt="Logo Unieuro">            
         </div>    
     </section>    
     <!--Fim Seção de parceiros-->
