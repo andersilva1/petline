@@ -19,8 +19,14 @@ if (isset($_GET['cod'])) {
 }
 
 if (mysqli_query($conn,$sqlCadastraPet)) {
-    echo '<script type="text/javascript">'; 
-    echo "alert('Pet cadastrado com sucesso!');"; 
+    echo '<script type="text/javascript">';
+
+    if (isset($_GET['cod'])) {
+        echo "alert('Pet alterado com sucesso!');";
+    }else{
+        echo "alert('Pet cadastrado com sucesso!');";
+    }
+    
     echo 'window.location.href = "http://www.petline.com.br/consulta/consulta_pet.php";';
     echo '</script>';
 }else{

@@ -11,7 +11,7 @@ $contadorConsultaPacote = mysqli_num_rows($resultadoConsultaPacote);
 ?>
 <div id="conteudo">
 <div class="container">
-    <div class="col-md-6">
+    <div class="col-md-12">
         <div class="page-header">
             <h2>Passeadores Disponíveis</h2>
         </div>
@@ -22,6 +22,7 @@ $contadorConsultaPacote = mysqli_num_rows($resultadoConsultaPacote);
                     <tr>
                     <th scope="col"></th>
                     <th scope="col">Nome</th>
+                    <th scope="col">Endereço</th>
                     <th scope="col">Selecionar</th>
                     </tr>
                 </thead>
@@ -47,21 +48,23 @@ $contadorConsultaPacote = mysqli_num_rows($resultadoConsultaPacote);
                 if ($totalArray > 0) {
 
                     $listaPasseadorIndisponivel = implode($arrayIndisponiveis,',');
-                    $sql = "SELECT CONCAT(U.nome, ' ', U.sobrenome) AS nome, U.id as id FROM agenda A INNER JOIN usuario U ON (A.id_usuario = U.id AND U.perfil = 'pas') WHERE A.id_usuario NOT IN ($listaPasseadorIndisponivel) GROUP BY A.id_usuario";
+                    $sql = "SELECT CONCAT(U.nome, ' ', U.sobrenome) AS nome, U.id as id, CONCAT(U.rua, ', ', U.bairro) as endereco FROM agenda A INNER JOIN usuario U ON (A.id_usuario = U.id AND U.perfil = 'pas') WHERE A.id_usuario NOT IN ($listaPasseadorIndisponivel) GROUP BY A.id_usuario";
                     
                 } else {
-                    $sql = "SELECT CONCAT(U.nome, ' ', U.sobrenome) AS nome, U.id as id FROM agenda A INNER JOIN usuario U ON (A.id_usuario = U.id AND U.perfil = 'pas') GROUP BY A.id_usuario";
+                    $sql = "SELECT CONCAT(U.nome, ' ', U.sobrenome) AS nome, U.id as id, CONCAT(U.rua, ', ', U.bairro) as endereco FROM agenda A INNER JOIN usuario U ON (A.id_usuario = U.id AND U.perfil = 'pas') GROUP BY A.id_usuario";
                 }
 
                 $resultadoPasseadorDisponivel = mysqli_query($conn,$sql);
 
                 while ($linhaPasseadorDisponivel = $resultadoPasseadorDisponivel -> fetch_array(MYSQLI_ASSOC)) {
                     $nome = $linhaPasseadorDisponivel['nome'];
+                    $endereco = utf8_encode($linhaPasseadorDisponivel['endereco']);
                     $idPasseador = $linhaPasseadorDisponivel['id'];
 
                     echo " <tr>
                     <th></th>
-                    <td width=90%>$nome</td>";?>
+                    <td width=30%>$nome</td>
+                    <td width=60%>$endereco</td>";?>
                     <td width=10% align=center><a href="#" onclick="if(confirm('Tem certeza que deseja contratar este passeador?')) <?php echo "window.location.href = 'http://www.petline.com.br/cadastra_servico.php?pet=$id_pet&pacote=$id_pacote&passeador=$idPasseador';" ?> ; return false" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></a></td>
                     <?php echo "</tr>";
                 }

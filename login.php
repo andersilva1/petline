@@ -38,6 +38,9 @@
                 case 2:
                     echo"<div class='alert alert-danger' role='alert'>Página restrita, por favor, realizar o login.</div>";
                 break;
+                case 3:
+                    echo"<div class='alert alert-danger' role='alert'>Os campos login e senha são obrigatórios</div>";
+                break;
             }
         }
     ?>

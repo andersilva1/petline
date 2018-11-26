@@ -88,6 +88,13 @@ while ($linhaSql = $resultadoSql -> fetch_array(MYSQLI_ASSOC)) {
         </table>
         </div>
         <div class="form-group">
+            <label for="opcao_pagamento">Forma de Pagamento</label> <br>
+            <input type="radio" name="opcao_pagamento" checked> Cartão de Débito
+        </div>
+        <div class="form-group">
+            <input type="radio" name="opcao_pagamento"> Cartão de Crédito
+        </div>
+        <div class="form-group">
             <label for="cc-name">Nome do Cartão</label>
             <input id="cc-name" type="text" class="form-control" placeholder="Nome completo" maxlenght="255">
         </div>
