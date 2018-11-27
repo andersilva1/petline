@@ -79,7 +79,11 @@ $id = $_SESSION['id'];
             }
       ?>    
     <!--Fim validação para o menu, de acordo com o tipo de login-->
-        
+            <div id="ItensMTop">
+            <li><a href="http://www.petline.com.br/consulta/detalha_usuario.php?id=<?php echo $id; ?>">Meu Perfil</a></li>
+            <li><a href="http://www.petline.com.br/sobre.php">Sobre</a></li>
+            <li><a href="#" onclick="if(confirm('Tem certeza que deseja sair?')) <?php echo "window.location.href = 'http://www.petline.com.br/logout.php';" ?> ; return false"<span>Sair</span></a></li>
+            </div>   
   </ul>
 </nav>
 

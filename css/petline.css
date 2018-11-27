@@ -25,6 +25,16 @@ h3,h4 {
     text-emphasis-position: below;    
     
 }
+#ItensMTop{
+    display: none;
+}
+@media (max-width: 768px) {
+    #ItensMTop{
+        display: inline;    
+    }
+}
+
+
 /*Estilo menus topo e lateral*/
 /*
     DEMO STYLE
@@ -291,6 +301,15 @@ a.article, a.article:hover {
     flex-direction: row;
     justify-content: space-around;    
     align-items: center;
+}
+
+@media (max-width: 1015px) {
+    #secnews{
+        display: flex;    
+        flex-direction: column;
+        justify-content: space-around;    
+        align-items: center;
+    }
 }
 
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,600,700,800);
